@@ -31,6 +31,7 @@ class CharacterTests: XCTestCase {
     
     // to be implemented
     func testPersonHasFullName() {
+        let ned = Person(name: "Eddar", house: starkHouse)
         XCTAssertEqual(ned.fullName, "Eddar Stark")
     }
 

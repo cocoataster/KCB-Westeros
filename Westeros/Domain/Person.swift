@@ -14,6 +14,7 @@ final class Person {
     let name: String
     private let _alias: String?
     let house: House
+    let fullName: String
     
     // Computable Variable
     var alias: String {
@@ -33,6 +34,7 @@ final class Person {
         self.name = name
         _alias = alias
         self.house = house
+        self.fullName = "\(name) \(house.name)"
     }
     
     // Must call designated init with self.init
