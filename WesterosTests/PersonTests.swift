@@ -19,7 +19,7 @@ class CharacterTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo")
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is comming")
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is Coming")
         ned = Person(name: "Eddard", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
     }

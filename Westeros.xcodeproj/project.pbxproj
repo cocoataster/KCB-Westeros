@@ -15,6 +15,8 @@
 		AD08633B2203A6ED00383F10 /* Sigil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08633A2203A6ED00383F10 /* Sigil.swift */; };
 		AD08633D2203A8A500383F10 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08633C2203A8A500383F10 /* PersonTests.swift */; };
 		AD08633F2203A9C000383F10 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08633E2203A9C000383F10 /* Person.swift */; };
+		AD600A8A2208EA50009C94CD /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD600A882208EA50009C94CD /* HouseDetailViewController.swift */; };
+		AD600A8B2208EA50009C94CD /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD600A892208EA50009C94CD /* HouseDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		AD08633A2203A6ED00383F10 /* Sigil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sigil.swift; sourceTree = "<group>"; };
 		AD08633C2203A8A500383F10 /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		AD08633E2203A9C000383F10 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		AD600A882208EA50009C94CD /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
+		AD600A892208EA50009C94CD /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		AD086314220392A400383F10 /* Westeros */ = {
 			isa = PBXGroup;
 			children = (
+				AD600A872208EA0A009C94CD /* Controllers */,
 				AD08633722039E0C00383F10 /* Domain */,
 				AD086315220392A400383F10 /* AppDelegate.swift */,
 				AD08631C220392A600383F10 /* Assets.xcassets */,
@@ -108,6 +113,15 @@
 				AD08633E2203A9C000383F10 /* Person.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		AD600A872208EA0A009C94CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD600A882208EA50009C94CD /* HouseDetailViewController.swift */,
+				AD600A892208EA50009C94CD /* HouseDetailViewController.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,7 @@
 			files = (
 				AD086320220392A600383F10 /* LaunchScreen.storyboard in Resources */,
 				AD08631D220392A600383F10 /* Assets.xcassets in Resources */,
+				AD600A8B2208EA50009C94CD /* HouseDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD600A8A2208EA50009C94CD /* HouseDetailViewController.swift in Sources */,
 				AD08633B2203A6ED00383F10 /* Sigil.swift in Sources */,
 				AD08633922039E2F00383F10 /* House.swift in Sources */,
 				AD086316220392A400383F10 /* AppDelegate.swift in Sources */,
