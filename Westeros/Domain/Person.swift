@@ -14,7 +14,6 @@ final class Person {
     let name: String
     private let _alias: String?
     let house: House
-    let fullName: String
     
     // Computable Variable
     var alias: String {
@@ -34,11 +33,35 @@ final class Person {
         self.name = name
         _alias = alias
         self.house = house
-        self.fullName = "\(name) \(house.name)"
     }
     
     // Must call designated init with self.init
 //    convenience init(name: String, house: House) {
 //        self.init(name: name, alias: nil, house: house)
 //    }
+}
+
+extension Person {
+    var fullName: String {
+        return "\(name) \(house.name)"
+    }
+}
+
+extension Person {
+    // Proxy will handle the Equatable and Hashable protocols
+    var proxy: String {
+        return "\(name) \(alias) \(house.name)"
+    }
+}
+
+extension Person: Hashable {
+    var hashValue: Int {
+        return proxy.hashValue
+    }
+}
+
+extension Person: Equatable {
+    static func == (lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxy == rhs.proxy
+    }
 }

@@ -13,11 +13,15 @@ class CharacterTests: XCTestCase {
     
     var starkHouse: House!
     var starkSigil: Sigil!
+    var ned: Person!
+    var arya: Person!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo")
         starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is comming")
+        ned = Person(name: "Eddard", house: starkHouse)
+        arya = Person(name: "Arya", house: starkHouse)
     }
 
     override func tearDown() {
@@ -25,14 +29,29 @@ class CharacterTests: XCTestCase {
     }
     
     func testPersonExistence() {
-        let character = Person(name: "Eddar", alias: "Ned", house: starkHouse)
+        let character = Person(name: "Eddard", alias: "Ned", house: starkHouse)
         XCTAssertNotNil(character)
     }
     
     // to be implemented
     func testPersonHasFullName() {
-        let ned = Person(name: "Eddar", house: starkHouse)
-        XCTAssertEqual(ned.fullName, "Eddar Stark")
+        XCTAssertEqual(ned.fullName, "Eddard Stark")
+    }
+    
+    func testPersonHashable() {
+        XCTAssertNotNil(ned.hashValue)
+    }
+    
+    func testPersonEquatable() {
+        // Identity
+        XCTAssertEqual(ned, ned)
+        
+        // Equality
+        let eddard = Person(name: "Eddard", house: starkHouse)
+        XCTAssertEqual(eddard, ned)
+        
+        // Non-Equality
+        XCTAssertNotEqual(ned, arya)
     }
 
 }
