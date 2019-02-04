@@ -24,6 +24,7 @@ class HouseDetailViewController: UIViewController {
         // If nil nibName looks for a nib file with same name as the class.
         // Bundle.init() future reference
         super.init(nibName: nil, bundle: Bundle.init(for: type(of: self)))
+        title = model.name
     }
     
     // Chapuza de los de Cupertino relacionada con el miedo a nil

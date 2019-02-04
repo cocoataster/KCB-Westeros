@@ -19,15 +19,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .cyan
         
-        // Create model
+        // Create models
         let starkSigil = Sigil(image: UIImage(named: "codeIsComing")!, description: "Lobo Huargo")
         let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is Coming")
         
+        let lannisterSigil = Sigil(image: UIImage(named: "lannister")!, description: "Un Leon Rampante")
+        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear my Roar")
+        
         // Create controller
-        let starkViewController = HouseDetailViewController(model: starkHouse)
+        let starkVC = HouseDetailViewController(model: starkHouse)
+        let lannisterVC = HouseDetailViewController(model: lannisterHouse)
+        
+//        let starkNavVC = UINavigationController(rootViewController: starkVC)
+//        let lannisterNavVC = UINavigationController(rootViewController: lannisterVC)
+        
+        // Create combiner
+        let tabBC = UITabBarController()
+        tabBC.viewControllers = [starkVC.wrappedInNavigation(), lannisterVC.wrappedInNavigation()]
+        
+        // Navigation Controller
+        //let starkNavigationController = UINavigationController(rootViewController: starkVC)
         
         // Assign rootViewController for window
-        window?.rootViewController = starkViewController
+        window?.rootViewController = tabBC
         
         return true
     }

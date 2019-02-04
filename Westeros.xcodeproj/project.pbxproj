@@ -17,6 +17,7 @@
 		AD08633F2203A9C000383F10 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08633E2203A9C000383F10 /* Person.swift */; };
 		AD600A8A2208EA50009C94CD /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD600A882208EA50009C94CD /* HouseDetailViewController.swift */; };
 		AD600A8B2208EA50009C94CD /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD600A892208EA50009C94CD /* HouseDetailViewController.xib */; };
+		AD600A952208FF76009C94CD /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		AD08633E2203A9C000383F10 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AD600A882208EA50009C94CD /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		AD600A892208EA50009C94CD /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
+		AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				AD08631C220392A600383F10 /* Assets.xcassets */,
 				AD08631E220392A600383F10 /* LaunchScreen.storyboard */,
 				AD086321220392A600383F10 /* Info.plist */,
+				AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */,
 			);
 			path = Westeros;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD600A952208FF76009C94CD /* UIViewController+Navigation.swift in Sources */,
 				AD600A8A2208EA50009C94CD /* HouseDetailViewController.swift in Sources */,
 				AD08633B2203A6ED00383F10 /* Sigil.swift in Sources */,
 				AD08633922039E2F00383F10 /* House.swift in Sources */,
