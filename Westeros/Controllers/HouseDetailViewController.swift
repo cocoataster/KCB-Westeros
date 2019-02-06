@@ -36,6 +36,7 @@ class HouseDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         syncModelWithView()
+        setupUI()
     }
     
     // MARK: - Sync
@@ -43,5 +44,16 @@ class HouseDetailViewController: UIViewController {
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
+    }
+    
+    func setupUI() {
+        let wikiBtn = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: #selector(displayWiki))
+        navigationItem.rightBarButtonItem = wikiBtn
+    }
+    
+    @objc func displayWiki() {
+        // Display wiki page
+        let wikiVC = WikiViewController(model: model)
+        navigationController?.pushViewController(wikiVC, animated: true)
     }
 }

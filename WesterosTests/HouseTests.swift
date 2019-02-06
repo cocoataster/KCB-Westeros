@@ -26,8 +26,11 @@ class HouseTests: XCTestCase {
         starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo")
         lannisterSigil = Sigil(image: UIImage(), description: "Leon Rampante")
         
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is comming")
-        lannisterHouse = House(name: "Lannister", sigil: starkSigil, words: "Hear my roar")
+        let starkURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+        let lannisterURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!
+        
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is comming", wikiURL: starkURL)
+        lannisterHouse = House(name: "Lannister", sigil: starkSigil, words: "Hear my roar", wikiURL: lannisterURL)
         
         robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
@@ -57,6 +60,11 @@ class HouseTests: XCTestCase {
         XCTAssertEqual(starkHouse.count, 1)
     }
     
+    func testHouseAddPersonsAtOnce() {
+        starkHouse.add(persons: robb, arya, tyrion)
+        XCTAssertEqual(starkHouse.count, 2)
+    }
+    
     func testHouseHashable() {
         XCTAssertNotNil(starkHouse.hashValue)
     }
@@ -64,7 +72,7 @@ class HouseTests: XCTestCase {
     func testHouseEquality() {
         XCTAssertEqual(starkHouse, starkHouse)
         
-        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is comming")
+        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is comming", wikiURL: URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!)
         XCTAssertEqual(starkHouse, jinxed)
         
         XCTAssertNotEqual(starkHouse, lannisterHouse)

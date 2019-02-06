@@ -13,13 +13,14 @@ class CharacterTests: XCTestCase {
     
     var starkHouse: House!
     var starkSigil: Sigil!
+    let starkURL: URL! = nil
     var ned: Person!
     var arya: Person!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo")
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is Coming")
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is Coming", wikiURL: URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!)
         ned = Person(name: "Eddard", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
     }
