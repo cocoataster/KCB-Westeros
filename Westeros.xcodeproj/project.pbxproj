@@ -19,6 +19,8 @@
 		AD08633B2203A6ED00383F10 /* Sigil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08633A2203A6ED00383F10 /* Sigil.swift */; };
 		AD08633D2203A8A500383F10 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08633C2203A8A500383F10 /* PersonTests.swift */; };
 		AD08633F2203A9C000383F10 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD08633E2203A9C000383F10 /* Person.swift */; };
+		AD2DEF2D220CCDB800C2926C /* HouseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2DEF2B220CCDB800C2926C /* HouseListViewController.swift */; };
+		AD2DEF2E220CCDB800C2926C /* HouseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD2DEF2C220CCDB800C2926C /* HouseListViewController.xib */; };
 		AD600A8A2208EA50009C94CD /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD600A882208EA50009C94CD /* HouseDetailViewController.swift */; };
 		AD600A8B2208EA50009C94CD /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD600A892208EA50009C94CD /* HouseDetailViewController.xib */; };
 		AD600A952208FF76009C94CD /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */; };
@@ -51,6 +53,8 @@
 		AD08633A2203A6ED00383F10 /* Sigil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sigil.swift; sourceTree = "<group>"; };
 		AD08633C2203A8A500383F10 /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
 		AD08633E2203A9C000383F10 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		AD2DEF2B220CCDB800C2926C /* HouseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListViewController.swift; sourceTree = "<group>"; };
+		AD2DEF2C220CCDB800C2926C /* HouseListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseListViewController.xib; sourceTree = "<group>"; };
 		AD600A882208EA50009C94CD /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		AD600A892208EA50009C94CD /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
 		AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				AD600A892208EA50009C94CD /* HouseDetailViewController.xib */,
 				AD03E7E6220B9FA8009C2193 /* WikiViewController.swift */,
 				AD03E7E7220B9FA8009C2193 /* WikiViewController.xib */,
+				AD2DEF2B220CCDB800C2926C /* HouseListViewController.swift */,
+				AD2DEF2C220CCDB800C2926C /* HouseListViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD086320220392A600383F10 /* LaunchScreen.storyboard in Resources */,
+				AD2DEF2E220CCDB800C2926C /* HouseListViewController.xib in Resources */,
 				AD08631D220392A600383F10 /* Assets.xcassets in Resources */,
 				AD03E7E9220B9FA8009C2193 /* WikiViewController.xib in Resources */,
 				AD600A8B2208EA50009C94CD /* HouseDetailViewController.xib in Resources */,
@@ -258,6 +265,7 @@
 				AD086316220392A400383F10 /* AppDelegate.swift in Sources */,
 				AD03E7E8220B9FA8009C2193 /* WikiViewController.swift in Sources */,
 				AD08633F2203A9C000383F10 /* Person.swift in Sources */,
+				AD2DEF2D220CCDB800C2926C /* HouseListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

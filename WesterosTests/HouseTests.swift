@@ -72,7 +72,8 @@ class HouseTests: XCTestCase {
     func testHouseEquality() {
         XCTAssertEqual(starkHouse, starkHouse)
         
-        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is comming", wikiURL: URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!)
+        let starkURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is comming", wikiURL: starkURL)
         XCTAssertEqual(starkHouse, jinxed)
         
         XCTAssertNotEqual(starkHouse, lannisterHouse)

@@ -13,6 +13,7 @@ class WikiViewController: UIViewController {
 
     
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
     
     let model: House
     
@@ -27,12 +28,34 @@ class WikiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.navigationDelegate = self
         syncModelWithView()
     }
     
     func syncModelWithView() {
+        loadingView.isHidden = false
+        loadingView.startAnimating()
         title = model.name
         let request = URLRequest(url: model.wikiURL)
         webView.load(request)
+    }
+}
+
+extension WikiViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        loadingView.stopAnimating()
+        loadingView.isHidden = true
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        let type = navigationAction.navigationType
+        
+        switch type {
+        case .linkActivated, .formSubmitted:
+            decisionHandler(.cancel)
+        default:
+            decisionHandler(.allow)
+        }
     }
 }

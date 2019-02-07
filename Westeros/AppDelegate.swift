@@ -22,12 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load houses from Repository
         let houses = Repository.local.houses
         
-        // Create combiner
-        let tabBC = UITabBarController()
-        tabBC.viewControllers = houses.map { HouseDetailViewController(model: $0).wrappedInNavigation()}
+        // Create Table View Controller
+        let houseListViewController = HouseListViewController(model: houses).wrappedInNavigation()
         
         // Assign rootViewController for window
-        window?.rootViewController = tabBC
+        window?.rootViewController = houseListViewController
         
         return true
     }
