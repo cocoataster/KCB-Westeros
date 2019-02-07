@@ -49,19 +49,29 @@ extension Person {
 
 extension Person {
     // Proxy will handle the Equatable and Hashable protocols
-    var proxy: String {
+    var proxyForEquality: String {
         return "\(name) \(alias) \(house.name)"
+    }
+    
+    var proxyForComparison: String {
+        return fullName
     }
 }
 
 extension Person: Hashable {
     var hashValue: Int {
-        return proxy.hashValue
+        return proxyForEquality.hashValue
     }
 }
 
 extension Person: Equatable {
     static func == (lhs: Person, rhs: Person) -> Bool {
-        return lhs.proxy == rhs.proxy
+        return lhs.proxyForEquality == rhs.proxyForEquality
+    }
+}
+
+extension Person: Comparable {
+    static func < (lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxyForComparison < rhs.proxyForComparison
     }
 }

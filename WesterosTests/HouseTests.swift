@@ -82,5 +82,9 @@ class HouseTests: XCTestCase {
     func testHouseComparison() {
         XCTAssertLessThan(lannisterHouse, starkHouse)
     }
+    
+    func testHouse_StoredMembers_ReturnsAnArrayOfSortedMembers() {
+        XCTAssertEqual(starkHouse.sortedMembers, starkHouse.sortedMembers.sorted())
+    }
 
 }

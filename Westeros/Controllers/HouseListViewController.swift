@@ -57,6 +57,17 @@ class HouseListViewController: UITableViewController {
         return cell!
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // What House has been selected?
+        let house = model[indexPath.row]
+        
+        // Create Detail Controller
+        let houseDetailViewController = HouseDetailViewController(model: house)
+        
+        // Show with push
+        navigationController?.pushViewController(houseDetailViewController, animated: true)
+    }
+    
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

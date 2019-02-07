@@ -48,12 +48,20 @@ class HouseDetailViewController: UIViewController {
     
     func setupUI() {
         let wikiBtn = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: #selector(displayWiki))
-        navigationItem.rightBarButtonItem = wikiBtn
+        let membersBtn = UIBarButtonItem(title: "Members", style: .plain, target: self, action: #selector(displayMembers))
+        
+        navigationItem.rightBarButtonItems = [wikiBtn, membersBtn]
     }
     
     @objc func displayWiki() {
-        // Display wiki page
+        // Create wiki page
         let wikiVC = WikiViewController(model: model)
         navigationController?.pushViewController(wikiVC, animated: true)
+    }
+    
+    @objc func displayMembers() {
+        // Create Controller
+        let membersVC = MemberListViewController(model: model.sortedMembers)
+        navigationController?.pushViewController(membersVC, animated: true)
     }
 }
