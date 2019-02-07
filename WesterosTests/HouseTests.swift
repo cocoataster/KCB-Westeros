@@ -30,7 +30,7 @@ class HouseTests: XCTestCase {
         let lannisterURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!
         
         starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is comming", wikiURL: starkURL)
-        lannisterHouse = House(name: "Lannister", sigil: starkSigil, words: "Hear my roar", wikiURL: lannisterURL)
+        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear my roar", wikiURL: lannisterURL)
         
         robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
