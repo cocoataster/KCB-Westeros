@@ -65,7 +65,9 @@ class HouseListViewController: UITableViewController {
         let houseDetailViewController = HouseDetailViewController(model: house)
         
         // Show with push
-        navigationController?.pushViewController(houseDetailViewController, animated: true)
+        //navigationController?.pushViewController(houseDetailViewController, animated: true)
+        
+        showDetailViewController(houseDetailViewController.wrappedInNavigation(), sender: self)
     }
     
     // MARK: - UITableViewDelegate
@@ -73,4 +75,8 @@ class HouseListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+}
+
+extension HouseListViewController: UISplitViewControllerDelegate {
+    
 }
