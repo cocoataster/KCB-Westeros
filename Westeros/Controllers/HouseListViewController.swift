@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol HouseSelectionDelegate {
+    func houseSelected(_ newHouse: House)
+}
+
 class HouseListViewController: UITableViewController {
     
     // MARK: - Properties
     let model: [House]
+    var delegate: HouseSelectionDelegate?
     
     // MARK: - Init
     init(model: [House]) {
@@ -60,6 +65,7 @@ class HouseListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // What House has been selected?
         let house = model[indexPath.row]
+        delegate?.houseSelected(house)
         
         // Create Detail Controller
         let houseDetailViewController = HouseDetailViewController(model: house)

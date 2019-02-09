@@ -23,12 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houses = Repository.local.houses
         
         // Create Controllers (Master and Detail for iPad)
-        let houseListViewController = HouseListViewController(model: houses).wrappedInNavigation()
+        let houseListViewController = HouseListViewController(model: houses)
         // #warning ("Force unwrapped to be removed")
-        let houseDetailViewController = HouseDetailViewController(model: houses.first!).wrappedInNavigation()
+        let houseDetailViewController = HouseDetailViewController(model: houses.first!)
+        
+        houseListViewController.delegate = houseDetailViewController
         
         let splitViewController = UISplitViewController()
-        splitViewController.viewControllers = [houseListViewController, houseDetailViewController]
+        splitViewController.viewControllers = [houseListViewController.wrappedInNavigation(), houseDetailViewController.wrappedInNavigation()]
         
         // Assign rootViewController for window
         window?.rootViewController = splitViewController
