@@ -28,6 +28,11 @@ class HouseListViewController: UITableViewController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func viewDidLoad() {
+        splitViewController?.delegate = self
+        splitViewController?.preferredDisplayMode = .allVisible
+    }
 
     // MARK: - Table view data source
 
@@ -65,15 +70,15 @@ class HouseListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // What House has been selected?
         let house = model[indexPath.row]
-        delegate?.houseSelected(house)
         
-        // Create Detail Controller
-        let houseDetailViewController = HouseDetailViewController(model: house)
-        
-        // Show with push
-        //navigationController?.pushViewController(houseDetailViewController, animated: true)
-        
-        showDetailViewController(houseDetailViewController.wrappedInNavigation(), sender: self)
+        if (splitViewController?.isCollapsed == true) {
+            // Create Detail Controller
+            let houseDetailViewController = HouseDetailViewController(model: house)
+            // Show with push
+            navigationController?.pushViewController(houseDetailViewController, animated: true)
+        } else {
+            delegate?.houseSelected(house)
+        }
     }
     
     // MARK: - UITableViewDelegate
@@ -84,5 +89,7 @@ class HouseListViewController: UITableViewController {
 }
 
 extension HouseListViewController: UISplitViewControllerDelegate {
-    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
 }
