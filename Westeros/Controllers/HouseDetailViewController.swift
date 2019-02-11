@@ -28,7 +28,6 @@ class HouseDetailViewController: UIViewController {
         // If nil nibName looks for a nib file with same name as the class.
         // Bundle.init() future reference
         super.init(nibName: nil, bundle: Bundle.init(for: type(of: self)))
-        title = model.name
     }
     
     // Chapuza de los de Cupertino relacionada con el miedo a nil
@@ -45,6 +44,7 @@ class HouseDetailViewController: UIViewController {
     
     // MARK: - Sync
     func syncModelWithView() {
+        self.title = model.name
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
@@ -70,8 +70,8 @@ class HouseDetailViewController: UIViewController {
     }
 }
 
-extension HouseDetailViewController: HouseSelectionDelegate {
-    func houseSelected(_ newHouse: House) {
-        self.model = newHouse
+extension HouseDetailViewController: HouseViewControllerDelegate {
+    func houseListViewController(_ viewController: HouseListViewController, didSelectHouse house: House) {
+        self.model = house
     }
 }

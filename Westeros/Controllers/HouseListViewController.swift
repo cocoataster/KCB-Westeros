@@ -8,15 +8,16 @@
 
 import UIKit
 
-protocol HouseSelectionDelegate {
-    func houseSelected(_ newHouse: House)
+// Define our own Delegate
+protocol HouseViewControllerDelegate {
+    func houseListViewController(_ viewController: HouseListViewController, didSelectHouse house: House)
 }
 
 class HouseListViewController: UITableViewController {
     
     // MARK: - Properties
     let model: [House]
-    var delegate: HouseSelectionDelegate?
+    var delegate: HouseViewControllerDelegate?
     
     // MARK: - Init
     init(model: [House]) {
@@ -27,11 +28,6 @@ class HouseListViewController: UITableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        splitViewController?.delegate = self
-        splitViewController?.preferredDisplayMode = .allVisible
     }
 
     // MARK: - Table view data source
@@ -77,7 +73,17 @@ class HouseListViewController: UITableViewController {
             // Show with push
             navigationController?.pushViewController(houseDetailViewController, animated: true)
         } else {
-            delegate?.houseSelected(house)
+            // Bind Delegate
+            delegate?.houseListViewController(self, didSelectHouse: house)
+            
+            // Notifications
+            let notificationCenter = NotificationCenter.default
+            let notification = Notification(name: Notification.Name(rawValue: HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY : house])
+            
+            // Send Notification
+            notificationCenter.post(notification)
+            
+            saveLastSelectedHouse(at: indexPath.row)
         }
     }
     
@@ -91,5 +97,24 @@ class HouseListViewController: UITableViewController {
 extension HouseListViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
+    }
+}
+
+extension HouseListViewController {
+    func saveLastSelectedHouse(at index: Int) {
+        //User Defaults - Write
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(index, forKey: LAST_HOUSE_KEY)
+        userDefaults.synchronize()
+    }
+    
+    func lastHouseSelected() -> House {
+        //User Defaults - Read
+        let index = UserDefaults.standard.integer(forKey: LAST_HOUSE_KEY)
+        return house(at: index)
+    }
+    
+    func house(at index: Int) -> House {
+        return model[index]
     }
 }

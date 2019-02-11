@@ -15,7 +15,7 @@ class WikiViewController: UIViewController {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
     
-    let model: House
+    var model: House
     
     init(model: House) {
         self.model = model
@@ -32,12 +32,38 @@ class WikiViewController: UIViewController {
         syncModelWithView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Add Notifications
+        let notificationCenter = NotificationCenter.default
+        let notificationName = Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(houseDidChange(notification:)),
+                                       name: notificationName,
+                                       object: nil) // Object is who sends notification
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Remove Notifications
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+    }
+    
     func syncModelWithView() {
         loadingView.isHidden = false
         loadingView.startAnimating()
         title = model.name
         let request = URLRequest(url: model.wikiURL)
         webView.load(request)
+    }
+    
+    @objc func houseDidChange(notification: Notification) {
+        guard let house = notification.userInfo?[HOUSE_KEY] as? House else { return }
+        self.model = house
+        syncModelWithView()
     }
 }
 
