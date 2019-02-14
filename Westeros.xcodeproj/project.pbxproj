@@ -30,6 +30,8 @@
 		ADCB903E2215D93500F20007 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB903D2215D93500F20007 /* Season.swift */; };
 		ADCB90402215DF3900F20007 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB903F2215DF3900F20007 /* Episode.swift */; };
 		ADE027DC2215F8AC00BBF9BD /* EpisodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE027DB2215F8AC00BBF9BD /* EpisodeTests.swift */; };
+		ADE027DE2216168700BBF9BD /* Season1.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE027DD2216168700BBF9BD /* Season1.json */; };
+		ADE027E02216181C00BBF9BD /* SeasonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE027DF2216181C00BBF9BD /* SeasonTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		ADCB903D2215D93500F20007 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		ADCB903F2215DF3900F20007 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		ADE027DB2215F8AC00BBF9BD /* EpisodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTests.swift; sourceTree = "<group>"; };
+		ADE027DD2216168700BBF9BD /* Season1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Season1.json; sourceTree = "<group>"; };
+		ADE027DF2216181C00BBF9BD /* SeasonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		AD03E7E3220B711D009C2193 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				ADE027DD2216168700BBF9BD /* Season1.json */,
 				AD03E7E4220B7147009C2193 /* Repository.swift */,
 			);
 			path = Repositories;
@@ -139,6 +144,7 @@
 				AD08633C2203A8A500383F10 /* PersonTests.swift */,
 				AD03E7E1220B7039009C2193 /* RepositoryTests.swift */,
 				ADE027DB2215F8AC00BBF9BD /* EpisodeTests.swift */,
+				ADE027DF2216181C00BBF9BD /* SeasonTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE027DE2216168700BBF9BD /* Season1.json in Resources */,
 				AD086320220392A600383F10 /* LaunchScreen.storyboard in Resources */,
 				AD2DEF2E220CCDB800C2926C /* HouseListViewController.xib in Resources */,
 				AD08631D220392A600383F10 /* Assets.xcassets in Resources */,
@@ -304,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADE027E02216181C00BBF9BD /* SeasonTests.swift in Sources */,
 				AD08633622039C3900383F10 /* HouseTests.swift in Sources */,
 				ADE027DC2215F8AC00BBF9BD /* EpisodeTests.swift in Sources */,
 				AD08633D2203A8A500383F10 /* PersonTests.swift in Sources */,
