@@ -28,8 +28,6 @@ class SeasonTests: XCTestCase {
         season = Season(name: "Season1", releaseDate: firstDate)
         firstEpisode = Episode(title: "\"Winter Is Coming\"", airDate: firstDate, season: season)
         lastEpisode = Episode(title: "\"Fire and Blood\"", airDate: lastDate, season: season)
-        
-        
     }
 
     override func tearDown() {
@@ -74,5 +72,4 @@ class SeasonTests: XCTestCase {
         let secondSeason = Season(name: "Season2", releaseDate: newDate)
         XCTAssertLessThan(season, secondSeason)
     }
-
 }

@@ -60,3 +60,42 @@ final class LocalFactory: HouseFactory {
         return houses.filter(theFilter)
     }
 }
+
+protocol SeasonFactory {
+    // Read-Only
+    var seasons: [Season] { get }
+    typealias SeasonFilter = (Season) -> Bool
+    func season(named: String) -> Season?
+    func seasons(filteredBy filter: SeasonFilter) -> [Season]
+    func dateFromStr(_ str: String) -> Date?
+}
+
+extension LocalFactory: SeasonFactory {
+    var seasons: [Season] {
+        let episode1 = Episode(title: "Winter Is Coming", airDate: dateFromStr("2011-04-17")!, season: Season(name: "Season1", releaseDate: dateFromStr("2011-04-17")!))
+        let episode2 = Episode(title: "The Kingsroad", airDate: dateFromStr("2011-04-24")!, season: Season(name: "Season2", releaseDate: dateFromStr("2011-04-17")!))
+        
+        let season1 = Season(name: "Season1", releaseDate: dateFromStr("2011-04-17")!)
+        
+        season1.add(episodes: episode1, episode2)
+        
+        return [season1].sorted()
+    }
+    
+    func season(named: String) -> Season? {
+        #warning ("To be implemented")
+        return Season(name: "", releaseDate: Date())
+    }
+    
+    func seasons(filteredBy filter: (Season) -> Bool) -> [Season] {
+        return seasons.filter(filter)
+    }
+    
+    func dateFromStr(_ strDate: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        return formatter.date(from: strDate)
+    }
+    
+}
