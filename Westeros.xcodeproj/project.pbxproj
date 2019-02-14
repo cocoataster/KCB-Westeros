@@ -29,6 +29,7 @@
 		AD600A952208FF76009C94CD /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */; };
 		ADCB903E2215D93500F20007 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB903D2215D93500F20007 /* Season.swift */; };
 		ADCB90402215DF3900F20007 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB903F2215DF3900F20007 /* Episode.swift */; };
+		ADE027DC2215F8AC00BBF9BD /* EpisodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE027DB2215F8AC00BBF9BD /* EpisodeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		ADCB903D2215D93500F20007 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		ADCB903F2215DF3900F20007 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		ADE027DB2215F8AC00BBF9BD /* EpisodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				AD08633522039C3900383F10 /* HouseTests.swift */,
 				AD08633C2203A8A500383F10 /* PersonTests.swift */,
 				AD03E7E1220B7039009C2193 /* RepositoryTests.swift */,
+				ADE027DB2215F8AC00BBF9BD /* EpisodeTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD08633622039C3900383F10 /* HouseTests.swift in Sources */,
+				ADE027DC2215F8AC00BBF9BD /* EpisodeTests.swift in Sources */,
 				AD08633D2203A8A500383F10 /* PersonTests.swift in Sources */,
 				AD03E7E2220B7039009C2193 /* RepositoryTests.swift in Sources */,
 			);
