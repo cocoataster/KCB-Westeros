@@ -65,7 +65,7 @@ protocol SeasonFactory {
     // Read-Only
     var seasons: [Season] { get }
     typealias SeasonFilter = (Season) -> Bool
-    func season(named: String) -> Season?
+    func season(dated: Date) -> Season?
     func seasons(filteredBy filter: SeasonFilter) -> [Season]
     func dateFromStr(_ str: String) -> Date?
 }
@@ -82,9 +82,9 @@ extension LocalFactory: SeasonFactory {
         return [season1].sorted()
     }
     
-    func season(named: String) -> Season? {
-        #warning ("To be implemented")
-        return Season(name: "", releaseDate: Date())
+    func season(dated date: Date) -> Season? {
+        let season = seasons.first { $0.releaseDate == date }
+        return season
     }
     
     func seasons(filteredBy filter: (Season) -> Bool) -> [Season] {
