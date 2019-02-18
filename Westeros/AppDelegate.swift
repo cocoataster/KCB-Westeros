@@ -17,34 +17,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .cyan
         
-        // Load houses from Repository
+        // Load houses and seasons from Repository
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
         
+        // Create Controllers (Master and Detail for iPad)
+        let houseListViewController = HouseListViewController(model: houses).wrappedInNavigation()
+        
         let seasonListViewController = SeasonListViewController(model: seasons).wrappedInNavigation()
         
-        // Create Controllers (Master and Detail for iPad)
-        let houseListViewController = HouseListViewController(model: houses)
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [houseListViewController, seasonListViewController]
+        
+        let houseDetailViewController = HouseDetailViewController(model: houses[0])
+        //let seasonDetailViewController = SeasonDetailViewController(model: seasons[0])
         
         // Last house selected (if any)
-        let lastHouseSelected = houseListViewController.lastHouseSelected()
+        //let lastHouseSelected = houseListViewController.lastHouseSelected()
         
-        let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
+        //let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
         
         // Assign Delegate
-        houseListViewController.delegate = houseDetailViewController
+        //houseListViewController.delegate = houseDetailViewController
         
         let splitViewController = UISplitViewController()
-        splitViewController.viewControllers = [houseListViewController.wrappedInNavigation(), houseDetailViewController.wrappedInNavigation()]
+        splitViewController.viewControllers = [tabBarController, houseDetailViewController.wrappedInNavigation()]
         
-        splitViewController.delegate = houseListViewController
-        splitViewController.preferredDisplayMode = .allVisible
+        //splitViewController.delegate = houseListViewController
+        //splitViewController.preferredDisplayMode = .allVisible
         
         // Assign rootViewController for window
-        //window?.rootViewController = splitViewController
-        window?.rootViewController = seasonListViewController
+        window?.rootViewController = splitViewController
         
         return true
     }
