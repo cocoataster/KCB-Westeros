@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
         
-        print(seasons)
+        let seasonListViewController = SeasonListViewController(model: seasons).wrappedInNavigation()
         
         // Create Controllers (Master and Detail for iPad)
         let houseListViewController = HouseListViewController(model: houses)
@@ -43,7 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitViewController.preferredDisplayMode = .allVisible
         
         // Assign rootViewController for window
-        window?.rootViewController = splitViewController
+        //window?.rootViewController = splitViewController
+        window?.rootViewController = seasonListViewController
         
         return true
     }
