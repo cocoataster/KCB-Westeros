@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Load houses from Repository
         let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
+        
+        print(seasons)
         
         // Create Controllers (Master and Detail for iPad)
         let houseListViewController = HouseListViewController(model: houses)

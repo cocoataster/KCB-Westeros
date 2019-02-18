@@ -1,92 +1,96 @@
-[
- {
-   "No.\noverall": 1,
-   "No. in\nseason": 1,
-   "Title": "\"Winter Is Coming\"",
-   "Directed by": "Tim Van Patten",
-   "Written by": "David Benioff & D. B. Weiss",
-   "Original air date": "April 17, 2011 (2011-04-17)",
-   "U.S. viewers\n(millions)": "2.22[20]"
- },
- {
-   "No.\noverall": 2,
-   "No. in\nseason": 2,
-   "Title": "\"The Kingsroad\"",
-   "Directed by": "Tim Van Patten",
-   "Written by": "David Benioff & D. B. Weiss",
-   "Original air date": "April 24, 2011 (2011-04-24)",
-   "U.S. viewers\n(millions)": "2.20[21]"
- },
- {
-   "No.\noverall": 3,
-   "No. in\nseason": 3,
-   "Title": "\"Lord Snow\"",
-   "Directed by": "Brian Kirk",
-   "Written by": "David Benioff & D. B. Weiss",
-   "Original air date": "May 1, 2011 (2011-05-01)",
-   "U.S. viewers\n(millions)": "2.44[22]"
- },
- {
-   "No.\noverall": 4,
-   "No. in\nseason": 4,
-   "Title": "\"Cripples, Bastards, and Broken Things\"",
-   "Directed by": "Brian Kirk",
-   "Written by": "Bryan Cogman",
-   "Original air date": "May 8, 2011 (2011-05-08)",
-   "U.S. viewers\n(millions)": "2.45[23]"
- },
- {
-   "No.\noverall": 5,
-   "No. in\nseason": 5,
-   "Title": "\"The Wolf and the Lion\"",
-   "Directed by": "Brian Kirk",
-   "Written by": "David Benioff & D. B. Weiss",
-   "Original air date": "May 15, 2011 (2011-05-15)",
-   "U.S. viewers\n(millions)": "2.58[24]"
- },
- {
-   "No.\noverall": 6,
-   "No. in\nseason": 6,
-   "Title": "\"A Golden Crown\"",
-   "Directed by": "Daniel Minahan",
-   "Written by": "Story by : David Benioff & D. B. Weiss \nTeleplay by : Jane Espenson and David Benioff & D. B. Weiss",
-   "Original air date": "May 22, 2011 (2011-05-22)",
-   "U.S. viewers\n(millions)": "2.44[25]"
- },
- {
-   "No.\noverall": 7,
-   "No. in\nseason": 7,
-   "Title": "\"You Win or You Die\"",
-   "Directed by": "Daniel Minahan",
-   "Written by": "David Benioff & D. B. Weiss",
-   "Original air date": "May 29, 2011 (2011-05-29)",
-   "U.S. viewers\n(millions)": "2.40[26]"
- },
- {
-   "No.\noverall": 8,
-   "No. in\nseason": 8,
-   "Title": "\"The Pointy End\"",
-   "Directed by": "Daniel Minahan",
-   "Written by": "George R. R. Martin",
-   "Original air date": "June 5, 2011 (2011-06-05)",
-   "U.S. viewers\n(millions)": "2.72[27]"
- },
- {
-   "No.\noverall": 9,
-   "No. in\nseason": 9,
-   "Title": "\"Baelor\"",
-   "Directed by": "Alan Taylor",
-   "Written by": "David Benioff & D. B. Weiss",
-   "Original air date": "June 12, 2011 (2011-06-12)",
-   "U.S. viewers\n(millions)": "2.66[28]"
- },
- {
-   "No.\noverall": 10,
-   "No. in\nseason": 10,
-   "Title": "\"Fire and Blood\"",
-   "Directed by": "Alan Taylor",
-   "Written by": "David Benioff & D. B. Weiss",
-   "Original air date": "June 19, 2011 (2011-06-19)",
-   "U.S. viewers\n(millions)": "3.04[29]"
- }
-]
+{
+    "title" : "Season1",
+    "releaseDate" : "2011-04-17",
+    "episodes": [
+        {
+            "numOverall": 1,
+            "numInSeason": 1,
+            "title": "\"Winter Is Coming\"",
+            "directedBy": "Tim Van Patten",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2011-04-17",
+            "usViewers": "2.22[20]"
+        },
+        {
+            "numOverall": 2,
+            "numInSeason": 2,
+            "title": "\"The Kingsroad\"",
+            "directedBy": "Tim Van Patten",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2011-04-24",
+            "usViewers": "2.20[21]"
+        },
+        {
+            "numOverall": 3,
+            "numInSeason": 3,
+            "title": "\"Lord Snow\"",
+            "directedBy": "Brian Kirk",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2011-05-01",
+            "usViewers": "2.44[22]"
+        },
+        {
+            "numOverall": 4,
+            "numInSeason": 4,
+            "title": "\"Cripples, Bastards, and Broken Things\"",
+            "directedBy": "Brian Kirk",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2011-05-08",
+            "usViewers": "2.45[23]"
+        },
+        {
+            "numOverall": 5,
+            "numInSeason": 5,
+            "title": "\"The Wolf and the Lion\"",
+            "directedBy": "Brian Kirk",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2011-05-15",
+            "usViewers": "2.58[24]"
+        },
+        {
+            "numOverall": 6,
+            "numInSeason": 6,
+            "title": "\"A Golden Crown\"",
+            "directedBy": "Daniel Minahan",
+            "writtenBy": "Story by : David Benioff & D. B. Weiss \nTeleplay by : Jane Espenson and David Benioff & D. B. Weiss",
+            "airDate": "2011-05-22",
+            "usViewers": "2.44[25]"
+        },
+        {
+            "numOverall": 7,
+            "numInSeason": 7,
+            "title": "\"You Win or You Die\"",
+            "directedBy": "Daniel Minahan",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2011-05-29",
+            "usViewers": "2.40[26]"
+        },
+        {
+            "numOverall": 8,
+            "numInSeason": 8,
+            "title": "\"The Pointy End\"",
+            "directedBy": "Daniel Minahan",
+            "writtenBy": "George R. R. Martin",
+            "airDate": "2011-06-05",
+            "usViewers": "2.72[27]"
+        },
+        {
+            "numOverall": 9,
+            "numInSeason": 9,
+            "title": "\"Baelor\"",
+            "directedBy": "Alan Taylor",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2011-06-12",
+            "usViewers": "2.66[28]"
+        },
+        {
+            "numOverall": 10,
+            "numInSeason": 10,
+            "title": "\"Fire and Blood\"",
+            "directedBy": "Alan Taylor",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2011-06-19",
+            "usViewers": "3.04[29]"
+        }
+    ]
+}

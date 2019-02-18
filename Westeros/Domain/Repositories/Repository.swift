@@ -71,15 +71,37 @@ protocol SeasonFactory {
 }
 
 extension LocalFactory: SeasonFactory {
+    enum SeasonNumber: String {
+        case Season1 = "Season1"
+        case Season2 = "Season2"
+        case Season3 = "Season3"
+        case Season4 = "Season4"
+        case Season5 = "Season5"
+        case Season6 = "Season6"
+        case Season7 = "Season7"
+    }
+    func loadInfo(season: SeasonNumber) -> SeasonInfo? {
+        let url = Bundle.main.url(forResource: season.rawValue, withExtension: "json")!
+        do {
+            let data = try Data(contentsOf: url)
+            let seasonInfo = try JSONDecoder().decode(SeasonInfo.self, from: data)
+            return seasonInfo
+        } catch {
+            print(error)
+        }
+        return nil
+    }
     var seasons: [Season] {
-        let episode1 = Episode(title: "Winter Is Coming", airDate: dateFromStr("2011-04-17")!, season: Season(name: "Season1", releaseDate: dateFromStr("2011-04-17")!))
-        let episode2 = Episode(title: "The Kingsroad", airDate: dateFromStr("2011-04-24")!, season: Season(name: "Season2", releaseDate: dateFromStr("2011-04-17")!))
+        let seasonInfo = loadInfo(season: .Season1)!
+        let season = Season(name: seasonInfo.title, releaseDate: dateFromStr(seasonInfo.releaseDate)!)
         
-        let season1 = Season(name: "Season1", releaseDate: dateFromStr("2011-04-17")!)
+        for episodeInfo in seasonInfo.episodes {
+            let episode = Episode(title: episodeInfo.title, airDate: dateFromStr(episodeInfo.airDate)!, season: season)
+            season.add(episodes: episode)
+        }
+        print(season.description)
         
-        season1.add(episodes: episode1, episode2)
-        
-        return [season1].sorted()
+        return [season]
     }
     
     func season(dated date: Date) -> Season? {
@@ -97,5 +119,4 @@ extension LocalFactory: SeasonFactory {
         
         return formatter.date(from: strDate)
     }
-    
 }
