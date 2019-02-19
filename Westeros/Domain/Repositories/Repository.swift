@@ -99,8 +99,6 @@ extension LocalFactory: SeasonFactory {
             let episode = Episode(title: episodeInfo.title, airDate: dateFromStr(episodeInfo.airDate)!, season: season)
             season.add(episodes: episode)
         }
-        print(season.description)
-        
         return [season]
     }
     

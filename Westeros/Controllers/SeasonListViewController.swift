@@ -65,3 +65,9 @@ class SeasonListViewController: UITableViewController {
         return 60
     }
 }
+
+extension SeasonListViewController: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
+}
