@@ -1,0 +1,70 @@
+
+{
+    "title" : "Season1",
+    "releaseDate" : "2011-04-17",
+    "episodes": [
+        {
+            "numOverall": 61,
+            "numInSeason": 1,
+            "title": "\"Dragonstone\"",
+            "directedBy": "Jeremy Podeswa",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2017-07-16",
+            "usViewers": "10.11[80]"
+        },
+        {
+            "numOverall": 62,
+            "numInSeason": 2,
+            "title": "\"Stormborn\"",
+            "directedBy": "Mark Mylod",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2017-07-23",
+            "usViewers": "9.27[81]"
+        },
+        {
+            "numOverall": 63,
+            "numInSeason": 3,
+            "title": "\"The Queen's Justice\"",
+            "directedBy": "Mark Mylod",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2017-07-30",
+            "usViewers": "9.25[82]"
+        },
+        {
+            "numOverall": 64,
+            "numInSeason": 4,
+            "title": "\"The Spoils of War\"",
+            "directedBy": "Matt Shakman",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2017-08-06",
+            "usViewers": "10.17[83]"
+        },
+        {
+            "numOverall": 65,
+            "numInSeason": 5,
+            "title": "\"Eastwatch\"",
+            "directedBy": "Matt Shakman",
+            "writtenBy": "Dave Hill",
+            "airDate": "2017-08-13",
+            "usViewers": "10.72[84]"
+        },
+        {
+            "numOverall": 66,
+            "numInSeason": 6,
+            "title": "\"Beyond the Wall\"",
+            "directedBy": "Alan Taylor",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2017-08-20",
+            "usViewers": "10.24[85]"
+        },
+        {
+            "numOverall": 67,
+            "numInSeason": 7,
+            "title": "\"The Dragon and the Wolf\"",
+            "directedBy": "Jeremy Podeswa",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2017-08-27",
+            "usViewers": "12.07[86]"
+        }
+    ]
+}

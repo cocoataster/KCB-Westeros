@@ -1,0 +1,97 @@
+
+{
+    "title" : "Season1",
+    "releaseDate" : "2011-04-17",
+    "episodes": [
+        {
+            "numOverall": 41,
+            "numInSeason": 1,
+            "title": "\"The Wars to Come\"",
+            "directedBy": "Michael Slovis",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2015-04-12",
+            "usViewers": "8.00[60]"
+        },
+        {
+            "numOverall": 42,
+            "numInSeason": 2,
+            "title": "\"The House of Black and White\"",
+            "directedBy": "Michael Slovis",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2015-04-19",
+            "usViewers": "6.81[61]"
+        },
+        {
+            "numOverall": 43,
+            "numInSeason": 3,
+            "title": "\"High Sparrow\"",
+            "directedBy": "Mark Mylod",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2015-04-26",
+            "usViewers": "6.71[62]"
+        },
+        {
+            "numOverall": 44,
+            "numInSeason": 4,
+            "title": "\"Sons of the Harpy\"",
+            "directedBy": "Mark Mylod",
+            "writtenBy": "Dave Hill",
+            "airDate": "2015-05-03",
+            "usViewers": "6.82[63]"
+        },
+        {
+            "numOverall": 45,
+            "numInSeason": 5,
+            "title": "\"Kill the Boy\"",
+            "directedBy": "Jeremy Podeswa",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2015-05-10",
+            "usViewers": "6.56[64]"
+        },
+        {
+            "numOverall": 46,
+            "numInSeason": 6,
+            "title": "\"Unbowed, Unbent, Unbroken\"",
+            "directedBy": "Jeremy Podeswa",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2015-05-17",
+            "usViewers": "6.24[65]"
+        },
+        {
+            "numOverall": 47,
+            "numInSeason": 7,
+            "title": "\"The Gift\"",
+            "directedBy": "Miguel Sapochnik",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2015-05-24",
+            "usViewers": "5.40[66]"
+        },
+        {
+            "numOverall": 48,
+            "numInSeason": 8,
+            "title": "\"Hardhome\"",
+            "directedBy": "Miguel Sapochnik",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2015-05-31",
+            "usViewers": "7.01[67]"
+        },
+        {
+            "numOverall": 49,
+            "numInSeason": 9,
+            "title": "\"The Dance of Dragons\"",
+            "directedBy": "David Nutter",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2015-06-07",
+            "usViewers": "7.14[68]"
+        },
+        {
+            "numOverall": 50,
+            "numInSeason": 10,
+            "title": "\"Mother's Mercy\"",
+            "directedBy": "David Nutter",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2015-06-14",
+            "usViewers": "8.11[69]"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "title" : "Season4",
+    "releaseDate" : "2016-04-06",
+    "episodes": [
+        {
+            "numOverall": 31,
+            "numInSeason": 1,
+            "title": "\"Two Swords\"",
+            "directedBy": "D. B. Weiss",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2014-04-06",
+            "usViewers": "6.64[50]"
+        },
+        {
+            "numOverall": 32,
+            "numInSeason": 2,
+            "title": "\"The Lion and the Rose\"",
+            "directedBy": "Alex Graves",
+            "writtenBy": "George R. R. Martin",
+            "airDate": "2014-04-13",
+            "usViewers": "6.31[51]"
+        },
+        {
+            "numOverall": 33,
+            "numInSeason": 3,
+            "title": "\"Breaker of Chains\"",
+            "directedBy": "Alex Graves",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2014-04-20",
+            "usViewers": "6.59[52]"
+        },
+        {
+            "numOverall": 34,
+            "numInSeason": 4,
+            "title": "\"Oathkeeper\"",
+            "directedBy": "Michelle MacLaren",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2014-04-27",
+            "usViewers": "6.95[53]"
+        },
+        {
+            "numOverall": 35,
+            "numInSeason": 5,
+            "title": "\"First of His Name\"",
+            "directedBy": "Michelle MacLaren",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2014-05-04",
+            "usViewers": "7.16[54]"
+        },
+        {
+            "numOverall": 36,
+            "numInSeason": 6,
+            "title": "\"The Laws of Gods and Men\"",
+            "directedBy": "Alik Sakharov",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2014-05-11",
+            "usViewers": "6.40[55]"
+        },
+        {
+            "numOverall": 37,
+            "numInSeason": 7,
+            "title": "\"Mockingbird\"",
+            "directedBy": "Alik Sakharov",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2014-05-18",
+            "usViewers": "7.20[56]"
+        },
+        {
+            "numOverall": 38,
+            "numInSeason": 8,
+            "title": "\"The Mountain and the Viper\"",
+            "directedBy": "Alex Graves",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2014-06-01",
+            "usViewers": "7.17[57]"
+        },
+        {
+            "numOverall": 39,
+            "numInSeason": 9,
+            "title": "\"The Watchers on the Wall\"",
+            "directedBy": "Neil Marshall",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2014-06-08",
+            "usViewers": "6.95[58]"
+        },
+        {
+            "numOverall": 40,
+            "numInSeason": 10,
+            "title": "\"The Children\"",
+            "directedBy": "Alex Graves",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2014-06-15",
+            "usViewers": "7.09[59]"
+        }
+    ]
+}

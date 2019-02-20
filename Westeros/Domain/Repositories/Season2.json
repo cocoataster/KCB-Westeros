@@ -1,0 +1,96 @@
+{
+    "title" : "Season1",
+    "releaseDate" : "2011-04-17",
+    "episodes": [
+        {
+            "numOverall": 11,
+            "numInSeason": 1,
+            "title": "\"The North Remembers\"",
+            "directedBy": "Alan Taylor",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2012-04-01",
+            "usViewers": "3.86[30]"
+        },
+        {
+            "numOverall": 12,
+            "numInSeason": 2,
+            "title": "\"The Night Lands\"",
+            "directedBy": "Alan Taylor",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2012-04-08",
+            "usViewers": "3.76[31]"
+        },
+        {
+            "numOverall": 13,
+            "numInSeason": 3,
+            "title": "\"What Is Dead May Never Die\"",
+            "directedBy": "Alik Sakharov",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2012-04-15",
+            "usViewers": "3.77[32]"
+        },
+        {
+            "numOverall": 14,
+            "numInSeason": 4,
+            "title": "\"Garden of Bones\"",
+            "directedBy": "David Petrarca",
+            "writtenBy": "Vanessa Taylor",
+            "airDate": "2012-04-22",
+            "usViewers": "3.65[33]"
+        },
+        {
+            "numOverall": 15,
+            "numInSeason": 5,
+            "title": "\"The Ghost of Harrenhal\"",
+            "directedBy": "David Petrarca",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2012-04-29",
+            "usViewers": "3.90[34]"
+        },
+        {
+            "numOverall": 16,
+            "numInSeason": 6,
+            "title": "\"The Old Gods and the New\"",
+            "directedBy": "David Nutter",
+            "writtenBy": "Vanessa Taylor",
+            "airDate": "2012-05-06",
+            "usViewers": "3.88[35]"
+        },
+        {
+            "numOverall": 17,
+            "numInSeason": 7,
+            "title": "\"A Man Without Honor\"",
+            "directedBy": "David Nutter",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2012-05-13",
+            "usViewers": "3.69[36]"
+        },
+        {
+            "numOverall": 18,
+            "numInSeason": 8,
+            "title": "\"The Prince of Winterfell\"",
+            "directedBy": "Alan Taylor",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2012-05-20",
+            "usViewers": "3.86[37]"
+        },
+        {
+            "numOverall": 19,
+            "numInSeason": 9,
+            "title": "\"Blackwater\"",
+            "directedBy": "Neil Marshall",
+            "writtenBy": "George R. R. Martin",
+            "airDate": "2012-05-27",
+            "usViewers": "3.38[38]"
+        },
+        {
+            "numOverall": 20,
+            "numInSeason": 10,
+            "title": "\"Valar Morghulis\"",
+            "directedBy": "Alan Taylor",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2012-06-03",
+            "usViewers": "4.20[39]"
+        }
+    ]
+}

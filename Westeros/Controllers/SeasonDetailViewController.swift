@@ -30,6 +30,7 @@ class SeasonDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateUI()
+        setupUI()
     }
     
     override func viewDidLoad() {
@@ -40,6 +41,16 @@ class SeasonDetailViewController: UIViewController {
         title = "Overview"
         seasonTitleLabel.text = model.name
         seasonInfoLabel.text = model.description
+    }
+    
+    func setupUI() {
+        let episodesBtn = UIBarButtonItem(title: "Episodes", style: .plain, target: self, action: #selector(showEpisodes))
+        navigationItem.rightBarButtonItems = [episodesBtn]
+    }
+    
+    @objc func showEpisodes() {
+        let episodeListViewController = EpisodeListViewController(model: model.sortedEpisodes)
+        navigationController?.pushViewController(episodeListViewController, animated: true)
     }
 }
 

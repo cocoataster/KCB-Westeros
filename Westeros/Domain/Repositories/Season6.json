@@ -1,0 +1,96 @@
+{
+    "title" : "Season1",
+    "releaseDate" : "2011-04-17",
+    "episodes": [
+        {
+            "numOverall": 51,
+            "numInSeason": 1,
+            "title": "\"The Red Woman\"",
+            "directedBy": "Jeremy Podeswa",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2016-04-24",
+            "usViewers": "7.94[70]"
+        },
+        {
+            "numOverall": 52,
+            "numInSeason": 2,
+            "title": "\"Home\"",
+            "directedBy": "Jeremy Podeswa",
+            "writtenBy": "Dave Hill",
+            "airDate": "2016-05-01",
+            "usViewers": "7.29[71]"
+        },
+        {
+            "numOverall": 53,
+            "numInSeason": 3,
+            "title": "\"Oathbreaker\"",
+            "directedBy": "Daniel Sackheim",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2016-05-08",
+            "usViewers": "7.28[72]"
+        },
+        {
+            "numOverall": 54,
+            "numInSeason": 4,
+            "title": "\"Book of the Stranger\"",
+            "directedBy": "Daniel Sackheim",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2016-05-15",
+            "usViewers": "7.82[73]"
+        },
+        {
+            "numOverall": 55,
+            "numInSeason": 5,
+            "title": "\"The Door\"",
+            "directedBy": "Jack Bender",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2016-05-22",
+            "usViewers": "7.89[74]"
+        },
+        {
+            "numOverall": 56,
+            "numInSeason": 6,
+            "title": "\"Blood of My Blood\"",
+            "directedBy": "Jack Bender",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2016-05-29",
+            "usViewers": "6.71[75]"
+        },
+        {
+            "numOverall": 57,
+            "numInSeason": 7,
+            "title": "\"The Broken Man\"",
+            "directedBy": "Mark Mylod",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2016-06-05",
+            "usViewers": "7.80[76]"
+        },
+        {
+            "numOverall": 58,
+            "numInSeason": 8,
+            "title": "\"No One\"",
+            "directedBy": "Mark Mylod",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2016-06-12",
+            "usViewers": "7.60[77]"
+        },
+        {
+            "numOverall": 59,
+            "numInSeason": 9,
+            "title": "\"Battle of the Bastards\"",
+            "directedBy": "Miguel Sapochnik",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2016-06-19",
+            "usViewers": "7.66[78]"
+        },
+        {
+            "numOverall": 60,
+            "numInSeason": 10,
+            "title": "\"The Winds of Winter\"",
+            "directedBy": "Miguel Sapochnik",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2016-06-26",
+            "usViewers": "8.89[79]"
+        }
+    ]
+}

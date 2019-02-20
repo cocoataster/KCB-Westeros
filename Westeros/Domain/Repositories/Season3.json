@@ -1,0 +1,96 @@
+{
+    "title" : "Season2",
+    "releaseDate" : "2013-03-31",
+    "episodes" : [
+        {
+            "numOverall": 21,
+            "numInSeason": 1,
+            "title": "\"Valar Dohaeris\"",
+            "directedBy": "Daniel Minahan",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2013-03-31",
+            "usViewers": "4.37[40]"
+        },
+        {
+            "numOverall": 22,
+            "numInSeason": 2,
+            "title": "\"Dark Wings, Dark Words\"",
+            "directedBy": "Daniel Minahan",
+            "writtenBy": "Vanessa Taylor",
+            "airDate": "2013-04-07",
+            "usViewers": "4.27[41]"
+        },
+        {
+            "numOverall": 23,
+            "numInSeason": 3,
+            "title": "\"Walk of Punishment\"",
+            "directedBy": "David Benioff",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2013-04-14",
+            "usViewers": "4.72[42]"
+        },
+        {
+            "numOverall": 24,
+            "numInSeason": 4,
+            "title": "\"And Now His Watch Is Ended\"",
+            "directedBy": "Alex Graves",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2013-04-21",
+            "usViewers": "4.87[43]"
+        },
+        {
+            "numOverall": 25,
+            "numInSeason": 5,
+            "title": "\"Kissed by Fire\"",
+            "directedBy": "Alex Graves",
+            "writtenBy": "Bryan Cogman",
+            "airDate": "2013-04-28",
+            "usViewers": "5.35[44]"
+        },
+        {
+            "numOverall": 26,
+            "numInSeason": 6,
+            "title": "\"The Climb\"",
+            "directedBy": "Alik Sakharov",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2013-05-05",
+            "usViewers": "5.50[45]"
+        },
+        {
+            "numOverall": 27,
+            "numInSeason": 7,
+            "title": "\"The Bear and the Maiden Fair\"",
+            "directedBy": "Michelle MacLaren",
+            "writtenBy": "George R. R. Martin",
+            "airDate": "2013-05-12",
+            "usViewers": "4.84[46]"
+        },
+        {
+            "numOverall": 28,
+            "numInSeason": 8,
+            "title": "\"Second Sons\"",
+            "directedBy": "Michelle MacLaren",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2013-05-19",
+            "usViewers": "5.13[47]"
+        },
+        {
+            "numOverall": 29,
+            "numInSeason": 9,
+            "title": "\"The Rains of Castamere\"",
+            "directedBy": "David Nutter",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2013-06-02",
+            "usViewers": "5.22[48]"
+        },
+        {
+            "numOverall": 30,
+            "numInSeason": 10,
+            "title": "\"Mhysa\"",
+            "directedBy": "David Nutter",
+            "writtenBy": "David Benioff & D. B. Weiss",
+            "airDate": "2013-06-09",
+            "usViewers": "5.39[49]"
+        }
+    ]
+}
