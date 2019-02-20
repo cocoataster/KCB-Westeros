@@ -38,7 +38,7 @@ class SeasonDetailViewController: UIViewController {
     }
     
     func updateUI() {
-        title = "Overview"
+        title = "Season Overview"
         seasonTitleLabel.text = model.name
         seasonInfoLabel.text = model.description
     }

@@ -39,8 +39,8 @@ class RepositoryTests: XCTestCase {
     }
     
     func testLocalRepositoryReturnsHousesByNameCaseInsensitive() {
-        let stark = Repository.local.house(named: "StArk")
-        XCTAssertNotNil(stark)
+        let stark = Repository.local.house(name: .Stark)
+        XCTAssertNotNil(stark!)
         XCTAssertEqual(stark?.name, "Stark")
     }
     

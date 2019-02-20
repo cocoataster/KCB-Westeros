@@ -38,7 +38,7 @@ class EpisodeDetailViewController: UIViewController {
     }
     
     func updateUI() {
-        title = "Overview"
+        title = "Episode Overview"
         episodeTitleLabel.text = model.title
         episodeInfoLabel.text = model.description
     }

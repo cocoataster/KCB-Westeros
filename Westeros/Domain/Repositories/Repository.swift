@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum HouseName: String {
+    case Stark = "Stark"
+    case Lannister = "Lannister"
+    case Targarien = "Targarien"
+}
+
 final class Repository {
     static let local = LocalFactory()
 }
@@ -16,7 +22,8 @@ protocol HouseFactory {
     // Only get since will be read-only
     var houses: [House] { get }
     typealias HouseFilter = (House) -> Bool
-    func house(named: String) -> House?
+    //func house(named: String) -> House?
+    func house(name: HouseName) -> House?
     func houses(filteredBy theFilter: HouseFilter) -> [House]
 }
 
@@ -50,9 +57,14 @@ final class LocalFactory: HouseFactory {
         return [targatianHouse, starkHouse, lannisterkHouse].sorted()
     }
     
-    func house(named name: String) -> House? {
-        //let house = houses.filter { $0.name == name }.first
-        let house = houses.first { $0.name.uppercased() == name.uppercased() }
+//    func house(named name: String) -> House? {
+//        //let house = houses.filter { $0.name == name }.first
+//        let house = houses.first { $0.name.uppercased() == name.uppercased() }
+//        return house
+//    }
+    
+    func house(name: HouseName) -> House? {
+        let house = houses.first { $0.name.uppercased() == name.rawValue.uppercased() }
         return house
     }
     
@@ -81,7 +93,7 @@ extension LocalFactory: SeasonFactory {
         case Season7 = "Season7"
     }
     func loadInfo(season: SeasonNumber) -> SeasonInfo? {
-        let url = Bundle.main.url(forResource: season.rawValue, withExtension: "json")!
+        guard let url = Bundle.main.url(forResource: season.rawValue, withExtension: "json") else { fatalError() }
         do {
             let data = try Data(contentsOf: url)
             let seasonInfo = try JSONDecoder().decode(SeasonInfo.self, from: data)
@@ -91,15 +103,21 @@ extension LocalFactory: SeasonFactory {
         }
         return nil
     }
+    
     var seasons: [Season] {
-        let seasonInfo = loadInfo(season: .Season1)!
-        let season = Season(name: seasonInfo.title, releaseDate: dateFromStr(seasonInfo.releaseDate)!)
-        
-        for episodeInfo in seasonInfo.episodes {
-            let episode = Episode(title: episodeInfo.title, airDate: dateFromStr(episodeInfo.airDate)!, season: season)
-            season.add(episodes: episode)
+        var result = [Season]()
+        for n in 1...7 {
+            let episodeNum = "Season\(n)"
+            let seasonInfo = loadInfo(season: LocalFactory.SeasonNumber.init(rawValue: episodeNum)!)!
+            let season = Season(name: seasonInfo.title, releaseDate: dateFromStr(seasonInfo.releaseDate)!)
+            
+            for episodeInfo in seasonInfo.episodes {
+                let episode = Episode(title: episodeInfo.title, airDate: dateFromStr(episodeInfo.airDate)!, season: season)
+                season.add(episodes: episode)
+            }
+            result.append(season)
         }
-        return [season]
+        return result
     }
     
     func season(dated date: Date) -> Season? {

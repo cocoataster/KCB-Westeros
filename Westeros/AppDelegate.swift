@@ -42,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController()
         tabBarController.delegate = self
         tabBarController.viewControllers = [houseListViewController.wrappedInNavigation(), seasonListViewController.wrappedInNavigation()]
+        tabBarController.tabBar.tintColor = .black
+        let houseIcon = tabBarController.tabBar.items?[0]
+        houseIcon?.image = UIImage(named: "HouseIcon")
+
+        let seasonIcon = tabBarController.tabBar.items?[1]
+        seasonIcon?.image = UIImage(named: "SeasonIcon")
+        
+        
         
         // Last house selected (if any)
         //let lastHouseSelected = houseListViewController.lastHouseSelected()
