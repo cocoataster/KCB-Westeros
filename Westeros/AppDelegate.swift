@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Assign Delegates
         houseListViewController.delegate = houseDetailViewController
-        //seasonListViewController.delegate = seasonDetailViewController
+        seasonListViewController.delegate = seasonDetailViewController
 
         let tabBarController = UITabBarController()
         tabBarController.delegate = self
@@ -61,12 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if tabBarController.selectedIndex == 0 {
-            splitViewController.delegate = houseListViewController
-            splitViewController.show(houseDetailViewController.wrappedInNavigation(), sender: self)
-        } else {
-            splitViewController.delegate = seasonListViewController
-            splitViewController.show(seasonDetailViewController.wrappedInNavigation(), sender: self)
+        if (splitViewController.isCollapsed == false) {
+            if tabBarController.selectedIndex == 0 {
+                splitViewController.delegate = houseListViewController
+                splitViewController.show(houseDetailViewController.wrappedInNavigation(), sender: self)
+            } else {
+                splitViewController.delegate = seasonListViewController
+                splitViewController.show(seasonDetailViewController.wrappedInNavigation(), sender: self)
+            }
         }
     }
 }

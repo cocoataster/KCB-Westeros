@@ -16,11 +16,7 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var wordsLabel: UILabel!
     
     // MARK: - Properties
-    var model: House {
-        didSet {
-            syncModelWithView()
-        }
-    }
+    var model: House
     
     // MARK: - Initialization
     init(model: House) {
@@ -38,12 +34,12 @@ class HouseDetailViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        syncModelWithView()
+        updateUI()
         setupUI()
     }
     
     // MARK: - Sync
-    func syncModelWithView() {
+    func updateUI() {
         self.title = model.name
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
@@ -72,6 +68,12 @@ class HouseDetailViewController: UIViewController {
 
 extension HouseDetailViewController: HouseViewControllerDelegate {
     func houseListViewController(_ viewController: HouseListViewController, didSelectHouse house: House) {
-        self.model = house
+        if (viewController.splitViewController?.isCollapsed == true) {
+            let houseDetailViewController = HouseDetailViewController(model: house)
+            viewController.navigationController?.pushViewController(houseDetailViewController, animated: true)
+        } else {
+            self.model = house
+            updateUI()
+        }
     }
 }

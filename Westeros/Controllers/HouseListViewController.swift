@@ -66,25 +66,16 @@ class HouseListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // What House has been selected?
         let house = model[indexPath.row]
+        delegate?.houseListViewController(self, didSelectHouse: house)
         
-        if (splitViewController?.isCollapsed == true) {
-            // Create Detail Controller
-            let houseDetailViewController = HouseDetailViewController(model: house)
-            // Show with push
-            navigationController?.pushViewController(houseDetailViewController, animated: true)
-        } else {
-            // Bind Delegate
-            delegate?.houseListViewController(self, didSelectHouse: house)
-            
-            // Notifications
-            let notificationCenter = NotificationCenter.default
-            let notification = Notification(name: Notification.Name(rawValue: HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY : house])
-            
-            // Send Notification
-            notificationCenter.post(notification)
-            
-            saveLastSelectedHouse(at: indexPath.row)
-        }
+        // Notifications
+        let notificationCenter = NotificationCenter.default
+        let notification = Notification(name: Notification.Name(rawValue: HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY : house])
+        
+        // Send Notification
+        notificationCenter.post(notification)
+        
+        saveLastSelectedHouse(at: indexPath.row)
     }
     
     // MARK: - UITableViewDelegate
