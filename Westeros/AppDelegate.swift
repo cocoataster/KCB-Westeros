@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var splitViewController: UISplitViewController!
     var houseListViewController: HouseListViewController!
     var seasonListViewController: SeasonListViewController!
+    var houseDetailViewController: HouseDetailViewController!
+    var seasonDetailViewController: SeasonDetailViewController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -25,20 +27,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
         
-        // Create Controllers (Master and Detail for iPad)
+        // Create Master Controllers
         houseListViewController = HouseListViewController(model: houses)
-        
         seasonListViewController = SeasonListViewController(model: seasons)
+        
+        // Create Detail Controllers
+        houseDetailViewController = HouseDetailViewController(model: houses[0])
+        seasonDetailViewController = SeasonDetailViewController(model: seasons[0])
+        
+        // Assign Delegates
+        houseListViewController.delegate = houseDetailViewController
+        //seasonListViewController.delegate = seasonDetailViewController
 
         let tabBarController = UITabBarController()
         tabBarController.delegate = self
         tabBarController.viewControllers = [houseListViewController.wrappedInNavigation(), seasonListViewController.wrappedInNavigation()]
         
-        let houseDetailViewController = HouseDetailViewController(model: houses[0])
-        
         // Last house selected (if any)
         //let lastHouseSelected = houseListViewController.lastHouseSelected()
-        
         //let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
         
         splitViewController = UISplitViewController()
@@ -56,23 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if tabBarController.selectedIndex == 0 {
-            let houses = Repository.local.houses
-            let houseDetailViewController = HouseDetailViewController(model: houses[0])
-            //window?.rootViewController?.show(houseDetailViewController, sender: self)
             splitViewController.delegate = houseListViewController
             splitViewController.show(houseDetailViewController.wrappedInNavigation(), sender: self)
         } else {
-            let seasons = Repository.local.seasons
-            let seasonDetailViewController = SeasonDetailViewController(model: seasons[0])
             splitViewController.delegate = seasonListViewController
             splitViewController.show(seasonDetailViewController.wrappedInNavigation(), sender: self)
         }
-        
-//        let houses = Repository.local.houses
-//        let seasons = Repository.local.seasons
-//
-//        let detailViewController = tabBarController.selectedIndex == 0 ? HouseDetailViewController(model: houses[0]) : SeasonDetailViewController(model: seasons[0])
-//        window?.rootViewController?.showDetailViewController(detailViewController, sender: self)
     }
 }
 

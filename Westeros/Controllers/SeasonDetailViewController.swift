@@ -15,7 +15,11 @@ class SeasonDetailViewController: UIViewController {
     @IBOutlet weak var seasonInfoLabel: UILabel!
     
     // MARK: - Properties
-    var model: Season
+    var model: Season {
+        didSet {
+            updateUI()
+        }
+    }
     
     // MARK: - Initializers
     init(model: Season) {
@@ -40,5 +44,17 @@ class SeasonDetailViewController: UIViewController {
         title = "Overview"
         seasonTitleLabel.text = model.name
         seasonInfoLabel.text = model.description
+    }
+}
+
+extension SeasonDetailViewController: SeasonViewControllerDelegate {
+    func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason season: Season) {
+        let seasonDetailViewController = SeasonDetailViewController(model: season)
+        
+        if (splitViewController?.isCollapsed == true) {
+            navigationController?.pushViewController(seasonDetailViewController, animated: true)
+        } else {
+            self.model = season
+        }
     }
 }

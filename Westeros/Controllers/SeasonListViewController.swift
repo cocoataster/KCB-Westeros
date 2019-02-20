@@ -8,10 +8,16 @@
 
 import UIKit
 
+// Define our own Delegate
+protocol SeasonViewControllerDelegate {
+    func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason season: Season)
+}
+
 class SeasonListViewController: UITableViewController {
     
     // MARK: - Properties
     let model: [Season]
+    var delegate: SeasonViewControllerDelegate?
     
     // MARK: - Initializers
     init(model: [Season]) {
@@ -54,9 +60,7 @@ class SeasonListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let season = model[indexPath.row]
-        
-        let seasonDetailViewController = SeasonDetailViewController(model: season)
-        navigationController?.pushViewController(seasonDetailViewController, animated: true)
+        delegate?.seasonListViewController(self, didSelectSeason: season)
     }
     
     // MARK: - UITableViewDelegate
