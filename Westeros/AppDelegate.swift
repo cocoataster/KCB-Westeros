@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         splitViewController = UISplitViewController()
         splitViewController.viewControllers = [tabBarController, houseDetailViewController.wrappedInNavigation()]
         
-        //splitViewController.delegate = houseListViewController
         splitViewController.preferredDisplayMode = .allVisible
         
         // Assign rootViewController for window
@@ -60,13 +59,13 @@ extension AppDelegate: UITabBarControllerDelegate {
             let houses = Repository.local.houses
             let houseDetailViewController = HouseDetailViewController(model: houses[0])
             //window?.rootViewController?.show(houseDetailViewController, sender: self)
-            splitViewController.show(houseDetailViewController, sender: self)
             splitViewController.delegate = houseListViewController
+            splitViewController.show(houseDetailViewController.wrappedInNavigation(), sender: self)
         } else {
             let seasons = Repository.local.seasons
             let seasonDetailViewController = SeasonDetailViewController(model: seasons[0])
-            splitViewController.show(seasonDetailViewController, sender: self)
             splitViewController.delegate = seasonListViewController
+            splitViewController.show(seasonDetailViewController.wrappedInNavigation(), sender: self)
         }
         
 //        let houses = Repository.local.houses
