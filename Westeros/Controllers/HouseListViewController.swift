@@ -9,7 +9,7 @@
 import UIKit
 
 // Define our own Delegate
-protocol HouseViewControllerDelegate {
+protocol HouseViewControllerDelegate: AnyObject {
     func houseListViewController(_ viewController: HouseListViewController, didSelectHouse house: House)
 }
 
@@ -17,7 +17,7 @@ class HouseListViewController: UITableViewController {
     
     // MARK: - Properties
     let model: [House]
-    var delegate: HouseViewControllerDelegate?
+    weak var delegate: HouseViewControllerDelegate?
     
     // MARK: - Init
     init(model: [House]) {

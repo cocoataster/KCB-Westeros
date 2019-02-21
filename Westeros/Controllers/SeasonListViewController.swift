@@ -9,7 +9,7 @@
 import UIKit
 
 // Define our own Delegate
-protocol SeasonViewControllerDelegate {
+protocol SeasonViewControllerDelegate: AnyObject {
     func seasonListViewController(_ viewController: SeasonListViewController, didSelectSeason season: Season)
 }
 
@@ -17,7 +17,7 @@ class SeasonListViewController: UITableViewController {
     
     // MARK: - Properties
     let model: [Season]
-    var delegate: SeasonViewControllerDelegate?
+    weak var delegate: SeasonViewControllerDelegate?
     
     // MARK: - Initializers
     init(model: [Season]) {
