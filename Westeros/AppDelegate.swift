@@ -71,10 +71,8 @@ extension AppDelegate: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if (splitViewController.isCollapsed == false) {
             if tabBarController.selectedIndex == 0 {
-                splitViewController.delegate = houseListViewController
                 splitViewController.show(houseDetailViewController.wrappedInNavigation(), sender: self)
             } else {
-                splitViewController.delegate = seasonListViewController
                 splitViewController.show(seasonDetailViewController.wrappedInNavigation(), sender: self)
             }
         }

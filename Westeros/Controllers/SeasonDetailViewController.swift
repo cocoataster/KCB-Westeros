@@ -33,14 +33,11 @@ class SeasonDetailViewController: UIViewController {
         setupUI()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func updateUI() {
         title = "Season Overview"
         seasonTitleLabel.text = model.name
         seasonInfoLabel.text = model.description
+        seasonImageView.image = UIImage(named: model.name)
     }
     
     func setupUI() {

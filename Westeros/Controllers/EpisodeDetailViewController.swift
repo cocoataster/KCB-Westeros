@@ -30,6 +30,8 @@ class EpisodeDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(self.seasonDidChange(notification:)), name: Notification.Name(Const.seasonDidChangeNotificationName.rawValue), object: nil)
         updateUI()
     }
     
@@ -39,7 +41,17 @@ class EpisodeDetailViewController: UIViewController {
     
     func updateUI() {
         title = "Episode Overview"
+        episodeImageView.image = UIImage(named: "EpisodeImg")!
         episodeTitleLabel.text = model.title
         episodeInfoLabel.text = model.description
+    }
+    
+    @objc func seasonDidChange(notification: Notification) {
+        guard let info = notification.userInfo,
+            let season = info[Const.seasonKey.rawValue] as? Season else { return }
+        model = season.sortedEpisodes[0]
+        updateUI()
+        //let backButton = UIBarButtonItem(title: season.name, style: .plain, target: self, action: Selector(("none")))
+        //navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }

@@ -32,11 +32,10 @@ class SeasonListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.tableFooterView = UIView()
     }
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return model.count
@@ -61,6 +60,15 @@ class SeasonListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let season = model[indexPath.row]
         delegate?.seasonListViewController(self, didSelectSeason: season)
+        
+        // Notifications
+        let notificationCenter = NotificationCenter.default
+        let notification = Notification(name: Notification.Name(rawValue: Const.seasonDidChangeNotificationName.rawValue), object: self, userInfo: [Const.seasonKey.rawValue : season])
+        
+        // Send Notification
+        notificationCenter.post(notification)
+        
+        //saveLastSelectedHouse(at: indexPath.row)
     }
     
     // MARK: - UITableViewDelegate

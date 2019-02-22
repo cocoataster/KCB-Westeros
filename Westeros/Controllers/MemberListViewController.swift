@@ -28,11 +28,10 @@ class MemberListViewController: UIViewController {
     }
     
     // MARK: - Life Cycle
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(self.houseDidChange(notification:)), name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
+        notificationCenter.addObserver(self, selector: #selector(self.houseDidChange(notification:)), name: Notification.Name(Const.houseDidChangeNotificationName.rawValue), object: nil)
     }
     
     override func viewDidLoad() {
@@ -41,6 +40,7 @@ class MemberListViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,10 +50,11 @@ class MemberListViewController: UIViewController {
     
     @objc func houseDidChange(notification: Notification) {
         guard let info = notification.userInfo,
-            let house = info[HOUSE_KEY] as? House else { return }
+            let house = info[Const.houseKey.rawValue] as? House else { return }
         model = house.sortedMembers
         tableView.reloadData()
-        navigationController?.reloadInputViews()
+        let backButton = UIBarButtonItem(title: house.name, style: .plain, target: self, action: Selector(("none")))
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }
 
