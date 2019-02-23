@@ -49,6 +49,7 @@ class HouseDetailViewController: UIViewController {
         let membersBtn = UIBarButtonItem(title: "Members", style: .plain, target: self, action: #selector(displayMembers))
         
         navigationItem.rightBarButtonItems = [wikiBtn, membersBtn]
+        navigationController?.navigationBar.tintColor = .black
     }
     
     @objc func displayWiki() {

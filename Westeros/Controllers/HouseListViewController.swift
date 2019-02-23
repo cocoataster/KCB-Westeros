@@ -32,6 +32,7 @@ class HouseListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = .black
         tableView.tableFooterView = UIView()
     }
 

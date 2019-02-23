@@ -33,6 +33,7 @@ class SeasonListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        navigationController?.navigationBar.tintColor = .black
     }
 
     // MARK: - Table view data source

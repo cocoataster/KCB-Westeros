@@ -41,6 +41,7 @@ class SeasonDetailViewController: UIViewController {
     func setupUI() {
         let episodesBtn = UIBarButtonItem(title: "Episodes", style: .plain, target: self, action: #selector(showEpisodes))
         navigationItem.rightBarButtonItems = [episodesBtn]
+        navigationController?.navigationBar.tintColor = .black
     }
     
     @objc func showEpisodes() {
