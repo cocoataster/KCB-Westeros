@@ -46,21 +46,14 @@ class HouseListViewController: UITableViewController {
         let house = model[indexPath.row]
         
         // Create cell
-        var cell = tableView.dequeueReusableCell(withIdentifier: "HouseCell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "HouseCell")
-        }
-        
-        /* Better use
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseCell", for: IndexPath)
-        */
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HouseCell") ?? UITableViewCell(style: .default, reuseIdentifier: "HouseCell")
         
         // Update View
-        cell?.textLabel?.text = house.name
-        cell?.imageView?.image = house.sigil.image
+        cell.textLabel?.text = house.name
+        cell.imageView?.image = house.sigil.image
         
         // Return cell
-        return cell!
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -93,15 +86,15 @@ extension HouseListViewController: UISplitViewControllerDelegate {
 
 extension HouseListViewController {
     func saveLastSelectedHouse(at index: Int) {
-        //User Defaults - Write
+        // Write on User Defaults
         let userDefaults = UserDefaults.standard
-        userDefaults.set(index, forKey: LAST_HOUSE_KEY)
+        userDefaults.set(index, forKey: Const.lastHouseKey.rawValue)
         userDefaults.synchronize()
     }
     
     func lastHouseSelected() -> House {
-        //User Defaults - Read
-        let index = UserDefaults.standard.integer(forKey: LAST_HOUSE_KEY)
+        //Read from User Defaults
+        let index = UserDefaults.standard.integer(forKey: Const.lastHouseKey.rawValue)
         return house(at: index)
     }
     

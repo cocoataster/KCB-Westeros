@@ -51,6 +51,7 @@
 		ADE99E03221D31AA00920954 /* Season5.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE99E02221D31AA00920954 /* Season5.json */; };
 		ADE99E05221D325C00920954 /* Season6.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE99E04221D325C00920954 /* Season6.json */; };
 		ADE99E07221D32B300920954 /* Season7.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE99E06221D32B300920954 /* Season7.json */; };
+		ADEC7AA22221F6BC00A28684 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEC7AA12221F6BC00A28684 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		ADE99E02221D31AA00920954 /* Season5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Season5.json; sourceTree = "<group>"; };
 		ADE99E04221D325C00920954 /* Season6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Season6.json; sourceTree = "<group>"; };
 		ADE99E06221D32B300920954 /* Season7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Season7.json; sourceTree = "<group>"; };
+		ADEC7AA12221F6BC00A28684 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				AD08631E220392A600383F10 /* LaunchScreen.storyboard */,
 				AD086321220392A600383F10 /* Info.plist */,
 				AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */,
+				ADEC7AA12221F6BC00A28684 /* DateFormatter.swift */,
 				AD0D4BD62212226E0023BF61 /* Constants.swift */,
 			);
 			path = Westeros;
@@ -385,6 +388,7 @@
 				ADAD96C9221B6D4D0056F767 /* EpisodeDetailViewController.swift in Sources */,
 				AD03E7E8220B9FA8009C2193 /* WikiViewController.swift in Sources */,
 				ADAD96C1221B571A0056F767 /* SeasonListViewController.swift in Sources */,
+				ADEC7AA22221F6BC00A28684 /* DateFormatter.swift in Sources */,
 				AD08633F2203A9C000383F10 /* Person.swift in Sources */,
 				AD2DEF2D220CCDB800C2926C /* HouseListViewController.swift in Sources */,
 				AD7A572C221CC06600A02CF0 /* MainViewController.swift in Sources */,

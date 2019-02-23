@@ -37,7 +37,7 @@ class WikiViewController: UIViewController {
         
         // Add Notifications
         let notificationCenter = NotificationCenter.default
-        let notificationName = Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME)
+        let notificationName = Notification.Name(Const.houseDidChangeNotificationName.rawValue)
         notificationCenter.addObserver(self,
                                        selector: #selector(houseDidChange(notification:)),
                                        name: notificationName,
@@ -61,7 +61,7 @@ class WikiViewController: UIViewController {
     }
     
     @objc func houseDidChange(notification: Notification) {
-        guard let house = notification.userInfo?[HOUSE_KEY] as? House else { return }
+        guard let house = notification.userInfo?[Const.houseKey.rawValue] as? House else { return }
         self.model = house
         syncModelWithView()
     }

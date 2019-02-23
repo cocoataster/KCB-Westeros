@@ -79,7 +79,6 @@ protocol SeasonFactory {
     typealias SeasonFilter = (Season) -> Bool
     func season(dated: Date) -> Season?
     func seasons(filteredBy filter: SeasonFilter) -> [Season]
-    func dateFromStr(_ str: String) -> Date?
 }
 
 extension LocalFactory: SeasonFactory {
@@ -99,7 +98,7 @@ extension LocalFactory: SeasonFactory {
             let seasonInfo = try JSONDecoder().decode(SeasonInfo.self, from: data)
             return seasonInfo
         } catch {
-            print(error)
+            fatalError()
         }
         return nil
     }
@@ -109,10 +108,10 @@ extension LocalFactory: SeasonFactory {
         for n in 1...7 {
             let episodeNum = "Season\(n)"
             let seasonInfo = loadInfo(season: LocalFactory.SeasonNumber.init(rawValue: episodeNum)!)!
-            let season = Season(name: seasonInfo.title, releaseDate: dateFromStr(seasonInfo.releaseDate)!)
+            let season = Season(name: seasonInfo.title, releaseDate: seasonInfo.releaseDate.dateFromStr()!)
             
             for episodeInfo in seasonInfo.episodes {
-                let episode = Episode(title: episodeInfo.title, airDate: dateFromStr(episodeInfo.airDate)!, season: season)
+                let episode = Episode(title: episodeInfo.title, airDate: episodeInfo.airDate.dateFromStr()!, season: season)
                 season.add(episodes: episode)
             }
             result.append(season)
@@ -127,12 +126,5 @@ extension LocalFactory: SeasonFactory {
     
     func seasons(filteredBy filter: (Season) -> Bool) -> [Season] {
         return seasons.filter(filter)
-    }
-    
-    func dateFromStr(_ strDate: String) -> Date? {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        
-        return formatter.date(from: strDate)
     }
 }
