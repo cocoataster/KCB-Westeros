@@ -12,7 +12,6 @@ class SeasonDetailViewController: UIViewController {
     
     @IBOutlet weak var seasonImageView: UIImageView!
     @IBOutlet weak var seasonTitleLabel: UILabel!
-    @IBOutlet weak var seasonInfoLabel: UILabel!
     
     // MARK: - Properties
     var model: Season
@@ -36,7 +35,6 @@ class SeasonDetailViewController: UIViewController {
     func updateUI() {
         title = "Season Overview"
         seasonTitleLabel.text = model.name
-        seasonInfoLabel.text = model.description
         seasonImageView.image = UIImage(named: model.name)
     }
     

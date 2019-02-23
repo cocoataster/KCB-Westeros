@@ -93,5 +93,11 @@ extension MemberListViewController: UITableViewDataSource {
         return cell!
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let member = model[indexPath.row]
+        
+        let nextScreen = MemberDetailViewController(model: member)
+        
+        navigationController?.pushViewController(nextScreen, animated: true)
+    }
 }
