@@ -1,4 +1,4 @@
-# KCB-Westeros
+# Westeros
 
 ![Swift Version](https://img.shields.io/badge/swift-4.2-orange.svg)
 
