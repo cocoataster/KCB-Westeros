@@ -12,11 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var splitViewController: UISplitViewController!
-    var houseListViewController: HouseListViewController!
-    var seasonListViewController: SeasonListViewController!
-    var houseDetailViewController: HouseDetailViewController!
-    var seasonDetailViewController: SeasonDetailViewController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,55 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
         
-        // Create Master Controllers
-        houseListViewController = HouseListViewController(model: houses)
-        seasonListViewController = SeasonListViewController(model: seasons)
+        let mainViewController = MainViewController(houses: houses, seasons: seasons)
         
-        // Create Detail Controllers
-        houseDetailViewController = HouseDetailViewController(model: houses[0])
-        seasonDetailViewController = SeasonDetailViewController(model: seasons[0])
-        
-        // Assign Delegates
-        houseListViewController.delegate = houseDetailViewController
-        seasonListViewController.delegate = seasonDetailViewController
-
-        let tabBarController = UITabBarController()
-        tabBarController.delegate = self
-        tabBarController.viewControllers = [houseListViewController.wrappedInNavigation(), seasonListViewController.wrappedInNavigation()]
-        tabBarController.tabBar.tintColor = .black
-        let houseIcon = tabBarController.tabBar.items?[0]
-        houseIcon?.image = UIImage(named: "HouseIcon")
-
-        let seasonIcon = tabBarController.tabBar.items?[1]
-        seasonIcon?.image = UIImage(named: "SeasonIcon")
-        
-        
-        
-        // Last house selected (if any)
-        //let lastHouseSelected = houseListViewController.lastHouseSelected()
-        //let houseDetailViewController = HouseDetailViewController(model: lastHouseSelected)
-        
-        splitViewController = UISplitViewController()
-        splitViewController.viewControllers = [tabBarController, houseDetailViewController.wrappedInNavigation()]
-        
-        splitViewController.preferredDisplayMode = .allVisible
-        
-        // Assign rootViewController for window
-        window?.rootViewController = splitViewController
+        window?.rootViewController = mainViewController
         
         return true
-    }
-}
-
-extension AppDelegate: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if (splitViewController.isCollapsed == false) {
-            if tabBarController.selectedIndex == 0 {
-                splitViewController.show(houseDetailViewController.wrappedInNavigation(), sender: self)
-            } else {
-                splitViewController.show(seasonDetailViewController.wrappedInNavigation(), sender: self)
-            }
-        }
     }
 }
 
