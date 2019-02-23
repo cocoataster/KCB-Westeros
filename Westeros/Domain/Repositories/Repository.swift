@@ -40,7 +40,7 @@ final class LocalFactory: HouseFactory {
         
         let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming", wikiURL: starkURL)
         let lannisterkHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear my roar", wikiURL: lannisterURL)
-        let targatianHouse = House(name: "Targarian", sigil: targaryenSigil, words: "Fuego y Sangre", wikiURL: targaryenURL)
+        let targatianHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fire and Blood", wikiURL: targaryenURL)
         
         // Add chars for later
         let robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)

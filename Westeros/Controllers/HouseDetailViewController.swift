@@ -11,7 +11,6 @@ import UIKit
 class HouseDetailViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var houseNameLabel: UILabel!
     @IBOutlet weak var sigilImageView: UIImageView!
     @IBOutlet weak var wordsLabel: UILabel!
     
@@ -40,8 +39,7 @@ class HouseDetailViewController: UIViewController {
     
     // MARK: - Sync
     func updateUI() {
-        self.title = model.name
-        houseNameLabel.text = "House \(model.name)"
+        self.title = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
     }

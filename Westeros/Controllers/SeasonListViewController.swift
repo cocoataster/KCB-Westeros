@@ -52,7 +52,7 @@ class SeasonListViewController: UITableViewController {
 
         // Configure the cell...
         cell?.textLabel?.text = season.name
-        cell?.detailTextLabel?.text = season.description
+        //cell?.detailTextLabel?.text = season.description
 
         return cell!
     }
