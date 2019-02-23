@@ -6,9 +6,7 @@ App for Game of Throne fans, with a list of the different houses, characters, se
 
 ## Snapshots
 
-![Snapshot](https://github.com/cocoataster/Images/blob/master/westerosSnap1.png)
-![Snapshot](https://github.com/cocoataster/Images/blob/master/westerosSnap2.png)
-![Snapshot](https://github.com/cocoataster/Images/blob/master/westerosSnap3.png)
+![Snapshot](https://github.com/cocoataster/Images/blob/master/westerosSnap.png)
 
 ## Features
 
