@@ -22,7 +22,6 @@ protocol HouseFactory {
     // Only get since will be read-only
     var houses: [House] { get }
     typealias HouseFilter = (House) -> Bool
-    //func house(named: String) -> House?
     func house(name: HouseName) -> House?
     func houses(filteredBy theFilter: HouseFilter) -> [House]
 }
@@ -57,12 +56,6 @@ final class LocalFactory: HouseFactory {
         return [targatianHouse, starkHouse, lannisterkHouse].sorted()
     }
     
-//    func house(named name: String) -> House? {
-//        //let house = houses.filter { $0.name == name }.first
-//        let house = houses.first { $0.name.uppercased() == name.uppercased() }
-//        return house
-//    }
-    
     func house(name: HouseName) -> House? {
         let house = houses.first { $0.name.uppercased() == name.rawValue.uppercased() }
         return house
@@ -91,8 +84,10 @@ extension LocalFactory: SeasonFactory {
         case Season6 = "Season6"
         case Season7 = "Season7"
     }
+    
     func loadInfo(season: SeasonNumber) -> SeasonInfo? {
         guard let url = Bundle.main.url(forResource: season.rawValue, withExtension: "json") else { fatalError() }
+        
         do {
             let data = try Data(contentsOf: url)
             let seasonInfo = try JSONDecoder().decode(SeasonInfo.self, from: data)
@@ -105,6 +100,7 @@ extension LocalFactory: SeasonFactory {
     
     var seasons: [Season] {
         var result = [Season]()
+        
         for n in 1...7 {
             let episodeNum = "Season\(n)"
             let seasonInfo = loadInfo(season: LocalFactory.SeasonNumber.init(rawValue: episodeNum)!)!
