@@ -68,3 +68,11 @@ extension MainViewController: UITabBarControllerDelegate {
         }
     }
 }
+
+extension MainViewController {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        let device = UIDevice.current.model
+        
+        return device == "iPhone" ? UIInterfaceOrientationMask.portrait : UIInterfaceOrientationMask.all
+    }
+}

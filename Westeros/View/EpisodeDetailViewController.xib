@@ -13,7 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpisodeDetailViewController" customModule="Westeros" customModuleProvider="target">
             <connections>
                 <outlet property="episodeImageView" destination="gn0-HY-xGq" id="E3G-IS-fHp"/>
-                <outlet property="episodeInfoLabel" destination="vOw-pj-hy7" id="CSv-oj-zbB"/>
                 <outlet property="episodeTitleLabel" destination="TAf-d5-dVy" id="yVq-gc-ri6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,37 +22,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sinopsis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOw-pj-hy7">
-                    <rect key="frame" x="16" y="487" width="343" height="160"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LZN-ae-OJt">
+                    <rect key="frame" x="19.5" y="155" width="336" height="357.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gn0-HY-xGq">
+                            <rect key="frame" x="0.0" y="0.0" width="336" height="328"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-d5-dVy">
+                            <rect key="frame" x="0.0" y="336" width="336" height="21.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="160" id="Bdv-ih-4Zc"/>
+                        <constraint firstAttribute="width" secondItem="LZN-ae-OJt" secondAttribute="height" multiplier="16:17" id="MqV-Di-wjS"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-d5-dVy">
-                    <rect key="frame" x="16" y="400" width="343" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gn0-HY-xGq">
-                    <rect key="frame" x="0.0" y="64" width="375" height="328"/>
-                </imageView>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="TAf-d5-dVy" firstAttribute="top" secondItem="gn0-HY-xGq" secondAttribute="bottom" constant="8" symbolic="YES" id="3oq-dh-bw0"/>
-                <constraint firstItem="TAf-d5-dVy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="6BZ-UQ-hBJ"/>
-                <constraint firstItem="TAf-d5-dVy" firstAttribute="trailing" secondItem="vOw-pj-hy7" secondAttribute="trailing" id="Gyl-nC-bbT"/>
-                <constraint firstAttribute="bottom" secondItem="vOw-pj-hy7" secondAttribute="bottom" constant="20" symbolic="YES" id="IBD-8f-uMw"/>
-                <constraint firstItem="gn0-HY-xGq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="T0Y-4g-vxQ"/>
-                <constraint firstAttribute="trailing" secondItem="gn0-HY-xGq" secondAttribute="trailing" id="ewK-xI-1gj"/>
-                <constraint firstItem="vOw-pj-hy7" firstAttribute="top" secondItem="TAf-d5-dVy" secondAttribute="bottom" constant="66" id="g95-U3-9gN"/>
-                <constraint firstItem="TAf-d5-dVy" firstAttribute="leading" secondItem="vOw-pj-hy7" secondAttribute="leading" id="hcY-c5-0Jk"/>
-                <constraint firstItem="gn0-HY-xGq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iKe-8W-flT"/>
-                <constraint firstItem="gn0-HY-xGq" firstAttribute="centerX" secondItem="TAf-d5-dVy" secondAttribute="centerX" id="lNX-0K-n5r"/>
+                <constraint firstItem="LZN-ae-OJt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5f8-Qf-Wwx"/>
+                <constraint firstItem="LZN-ae-OJt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EHc-PN-Cxv"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

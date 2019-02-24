@@ -172,16 +172,16 @@
 		AD086314220392A400383F10 /* Westeros */ = {
 			isa = PBXGroup;
 			children = (
+				ADCB90412215E07900F20007 /* Model */,
+				AD03E7E3220B711D009C2193 /* Repositories */,
+				ADE3CBAD22231521004EF0F7 /* Extensions */,
 				AD7A572D221CCC4400A02CF0 /* View */,
 				AD600A872208EA0A009C94CD /* Controllers */,
-				AD08633722039E0C00383F10 /* Domain */,
 				AD086315220392A400383F10 /* AppDelegate.swift */,
+				AD0D4BD62212226E0023BF61 /* Constants.swift */,
 				AD08631C220392A600383F10 /* Assets.xcassets */,
 				AD08631E220392A600383F10 /* LaunchScreen.storyboard */,
 				AD086321220392A600383F10 /* Info.plist */,
-				AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */,
-				ADEC7AA12221F6BC00A28684 /* DateFormatter.swift */,
-				AD0D4BD62212226E0023BF61 /* Constants.swift */,
 			);
 			path = Westeros;
 			sourceTree = "<group>";
@@ -197,15 +197,6 @@
 				ADE027DF2216181C00BBF9BD /* SeasonTests.swift */,
 			);
 			path = WesterosTests;
-			sourceTree = "<group>";
-		};
-		AD08633722039E0C00383F10 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				AD03E7E3220B711D009C2193 /* Repositories */,
-				ADCB90412215E07900F20007 /* Model */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		AD600A872208EA0A009C94CD /* Controllers */ = {
@@ -267,6 +258,15 @@
 				AD03E7E6220B9FA8009C2193 /* WikiViewController.swift */,
 			);
 			path = House;
+			sourceTree = "<group>";
+		};
+		ADE3CBAD22231521004EF0F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD600A942208FF76009C94CD /* UIViewController+Navigation.swift */,
+				ADEC7AA12221F6BC00A28684 /* DateFormatter.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

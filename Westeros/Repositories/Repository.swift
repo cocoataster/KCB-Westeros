@@ -37,19 +37,19 @@ final class LocalFactory: HouseFactory {
         let lannisterURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!
         let targaryenURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
         
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming", wikiURL: starkURL)
-        let lannisterkHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear my roar", wikiURL: lannisterURL)
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter Is Coming", wikiURL: starkURL)
+        let lannisterkHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear Me Roar", wikiURL: lannisterURL)
         let targatianHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fire and Blood", wikiURL: targaryenURL)
         
         // Add chars for later
-        let robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
-        let arya = Person(name: "Arya", house: starkHouse)
-        let tyrion = Person(name: "Tyrion", alias: "El enano", house: lannisterkHouse)
-        let cersei = Person(name: "Cersei", house: lannisterkHouse)
-        let jaime = Person(name: "Jaime", alias: "El Matareyes", house: lannisterkHouse)
-        let dani = Person(name: "Daenerys", alias: "Madre de dragones", house: targatianHouse)
+        let eddard = Person(name: "Eddard", alias: "The Quiet Wolf", house: starkHouse)
+        let arya = Person(name: "Arya", alias: "Lumpyhead", house: starkHouse)
+        let tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterkHouse)
+        let cersei = Person(name: "Cersei",alias: "Light of the West", house: lannisterkHouse)
+        let jaime = Person(name: "Jaime", alias: "Kingslayer", house: lannisterkHouse)
+        let dani = Person(name: "Daenerys", alias: "Dragonmother", house: targatianHouse)
         
-        starkHouse.add(persons: robb, arya)
+        starkHouse.add(persons: eddard, arya)
         lannisterkHouse.add(persons: tyrion, cersei, jaime)
         targatianHouse.add(person: dani)
         

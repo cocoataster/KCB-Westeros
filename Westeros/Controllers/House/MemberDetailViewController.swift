@@ -43,7 +43,7 @@ class MemberDetailViewController: UIViewController {
     
     func updateUI() {
         title = "Character"
-        memberImageView.image = UIImage()
+        memberImageView.image = UIImage(named: model.name)
         memberTitleLabel.text = model.fullName
     }
     

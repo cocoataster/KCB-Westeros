@@ -13,7 +13,6 @@ class EpisodeDetailViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var episodeImageView: UIImageView!
     @IBOutlet weak var episodeTitleLabel: UILabel!
-    @IBOutlet weak var episodeInfoLabel: UILabel!
     
     // MARK: - Properties
     var model: Episode
@@ -50,7 +49,6 @@ class EpisodeDetailViewController: UIViewController {
         title = model.title
         episodeImageView.image = UIImage(named: "EpisodeImg")!
         episodeTitleLabel.text = model.title
-        episodeInfoLabel.text = model.description
     }
     
     @objc func seasonDidChange(notification: Notification) {
