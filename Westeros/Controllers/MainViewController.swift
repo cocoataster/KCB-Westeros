@@ -18,10 +18,10 @@ class MainViewController: UISplitViewController {
 
     init(houses: [House], seasons: [Season]) {
         houseListViewController = HouseListViewController(model: houses)
-        houseDetailViewController = HouseDetailViewController(model: houses[0])
+        houseDetailViewController = HouseDetailViewController(model: houseListViewController.lastHouseSelected())
         
         seasonListViewController = SeasonListViewController(model: seasons)
-        seasonDetailViewController = SeasonDetailViewController(model: seasons[0])
+        seasonDetailViewController = SeasonDetailViewController(model: seasonListViewController.lastSeasonSelected())
         
         tabBarVC.viewControllers = [houseListViewController.wrappedInNavigation(), seasonListViewController.wrappedInNavigation()]
         

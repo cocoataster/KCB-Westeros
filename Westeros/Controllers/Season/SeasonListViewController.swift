@@ -69,7 +69,7 @@ class SeasonListViewController: UITableViewController {
         // Send Notification
         notificationCenter.post(notification)
         
-        //saveLastSelectedHouse(at: indexPath.row)
+        saveLastSelectedSeason(at: indexPath.row)
     }
     
     // MARK: - UITableViewDelegate
@@ -82,5 +82,24 @@ class SeasonListViewController: UITableViewController {
 extension SeasonListViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
+    }
+}
+
+extension SeasonListViewController {
+    func saveLastSelectedSeason(at index: Int) {
+        // Write on User Defaults
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(index, forKey: Const.lastSeasonKey.rawValue)
+        userDefaults.synchronize()
+    }
+    
+    func lastSeasonSelected() -> Season {
+        //Read from User Defaults
+        let index = UserDefaults.standard.integer(forKey: Const.lastSeasonKey.rawValue)
+        return season(at: index)
+    }
+    
+    func season(at index: Int) -> Season {
+        return model[index]
     }
 }
