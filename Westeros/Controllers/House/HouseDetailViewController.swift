@@ -39,7 +39,7 @@ class HouseDetailViewController: UIViewController {
     
     // MARK: - Sync
     func updateUI() {
-        self.title = "House \(model.name)"
+        self.title = "\(model.name)'s House"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
     }

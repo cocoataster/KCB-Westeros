@@ -22,6 +22,11 @@ class WikiViewController: UIViewController {
         super.init(nibName:nil, bundle: nil)
     }
     
+    deinit {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -44,18 +49,10 @@ class WikiViewController: UIViewController {
                                        object: nil) // Object is who sends notification
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Remove Notifications
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.removeObserver(self)
-    }
-    
     func syncModelWithView() {
         loadingView.isHidden = false
         loadingView.startAnimating()
-        title = model.name
+        title = "\(model.name)'s Wiki"
         let request = URLRequest(url: model.wikiURL)
         webView.load(request)
     }
@@ -64,6 +61,8 @@ class WikiViewController: UIViewController {
         guard let house = notification.userInfo?[Const.houseKey.rawValue] as? House else { return }
         self.model = house
         syncModelWithView()
+        let backButton = UIBarButtonItem(title: house.name, style: .plain, target: self, action: Selector(("none")))
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }
 

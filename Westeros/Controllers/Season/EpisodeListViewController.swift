@@ -18,6 +18,12 @@ class EpisodeListViewController: UITableViewController {
         title = "Episodes"
     }
     
+    deinit {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+        print("EpisodeList has been deinit")
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -33,11 +39,6 @@ class EpisodeListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        //let notificationCenter = NotificationCenter.default
-        //notificationCenter.removeObserver(self)
     }
     
     @objc func seasonDidChange(notification: Notification) {

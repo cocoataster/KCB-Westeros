@@ -23,6 +23,12 @@ class MemberDetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    deinit {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+        print("MemberDetail has been deinit")
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -42,8 +48,6 @@ class MemberDetailViewController: UIViewController {
     }
     
     @objc func houseDidChange(notification: Notification) {
-        guard let info = notification.userInfo, let house = info[Const.houseKey.rawValue] as? House else { return }
-        model = house.sortedMembers[0]
-        updateUI()
+        navigationController?.popViewController(animated: true)
     }
 }

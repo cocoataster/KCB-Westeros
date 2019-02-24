@@ -20,7 +20,13 @@ class MemberListViewController: UIViewController {
     init(model: [Person]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = "Members"
+        title = "\(model[0].house.name)'s Members"
+    }
+    
+    deinit {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+        print("MemberList has been deinit")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,17 +49,13 @@ class MemberListViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.removeObserver(self)
-    }
-    
     @objc func houseDidChange(notification: Notification) {
         guard let info = notification.userInfo,
             let house = info[Const.houseKey.rawValue] as? House else { return }
+        title = "\(house.name)'s Members"
         model = house.sortedMembers
         tableView.reloadData()
-        let backButton = UIBarButtonItem(title: house.name, style: .plain, target: self, action: Selector(("none")))
+        let backButton = UIBarButtonItem(title: "\(house.name)'s Members", style: .plain, target: self, action: Selector(("none")))
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }

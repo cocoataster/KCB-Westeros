@@ -25,6 +25,12 @@ class EpisodeDetailViewController: UIViewController {
         title = model.title
     }
     
+    deinit {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+        print("EpisodeDetail has been deinit")
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -41,7 +47,7 @@ class EpisodeDetailViewController: UIViewController {
     }
     
     func updateUI() {
-        title = "Episode Overview"
+        title = model.title
         episodeImageView.image = UIImage(named: "EpisodeImg")!
         episodeTitleLabel.text = model.title
         episodeInfoLabel.text = model.description
