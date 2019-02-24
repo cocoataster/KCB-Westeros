@@ -41,10 +41,6 @@ class EpisodeDetailViewController: UIViewController {
         updateUI()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func updateUI() {
         title = model.title
         episodeImageView.image = UIImage(named: "EpisodeImg.gif")!
