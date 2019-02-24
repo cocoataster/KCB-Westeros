@@ -211,16 +211,9 @@
 		AD600A872208EA0A009C94CD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ADAD96C7221B6D4D0056F767 /* EpisodeDetailViewController.swift */,
-				ADAD96C3221B5DA40056F767 /* EpisodeListViewController.swift */,
-				AD600A882208EA50009C94CD /* HouseDetailViewController.swift */,
-				AD2DEF2B220CCDB800C2926C /* HouseListViewController.swift */,
+				ADE3CBAB2222E0A0004EF0F7 /* Season */,
+				ADE3CBAC2222E0BA004EF0F7 /* House */,
 				AD7A572B221CC06600A02CF0 /* MainViewController.swift */,
-				AD83928E22215EF5007DA065 /* MemberDetailViewController.swift */,
-				AD2DEF2F220CE5EA00C2926C /* MemberListViewController.swift */,
-				ADAD96CB221B72660056F767 /* SeasonDetailViewController.swift */,
-				ADAD96BF221B57190056F767 /* SeasonListViewController.swift */,
-				AD03E7E6220B9FA8009C2193 /* WikiViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +244,29 @@
 				ADCB903D2215D93500F20007 /* Season.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ADE3CBAB2222E0A0004EF0F7 /* Season */ = {
+			isa = PBXGroup;
+			children = (
+				ADAD96C7221B6D4D0056F767 /* EpisodeDetailViewController.swift */,
+				ADAD96C3221B5DA40056F767 /* EpisodeListViewController.swift */,
+				ADAD96CB221B72660056F767 /* SeasonDetailViewController.swift */,
+				ADAD96BF221B57190056F767 /* SeasonListViewController.swift */,
+			);
+			path = Season;
+			sourceTree = "<group>";
+		};
+		ADE3CBAC2222E0BA004EF0F7 /* House */ = {
+			isa = PBXGroup;
+			children = (
+				AD600A882208EA50009C94CD /* HouseDetailViewController.swift */,
+				AD2DEF2B220CCDB800C2926C /* HouseListViewController.swift */,
+				AD83928E22215EF5007DA065 /* MemberDetailViewController.swift */,
+				AD2DEF2F220CE5EA00C2926C /* MemberListViewController.swift */,
+				AD03E7E6220B9FA8009C2193 /* WikiViewController.swift */,
+			);
+			path = House;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

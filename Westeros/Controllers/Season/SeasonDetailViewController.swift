@@ -33,7 +33,7 @@ class SeasonDetailViewController: UIViewController {
     }
     
     func updateUI() {
-        title = "Season Overview"
+        title = model.name
         seasonTitleLabel.text = model.name
         seasonImageView.image = UIImage(named: model.name)
     }
