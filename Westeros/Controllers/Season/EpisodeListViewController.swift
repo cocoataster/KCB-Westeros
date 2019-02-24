@@ -69,7 +69,7 @@ class EpisodeListViewController: UITableViewController {
 
         // Configure the cell...
         cell?.textLabel?.text = episode.title
-        cell?.detailTextLabel?.text = "\(episode.airDate)"
+        cell?.detailTextLabel?.text = "\(episode.airDate.strFromDate())"
 
         return cell!
     }
