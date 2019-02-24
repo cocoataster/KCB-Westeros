@@ -25,6 +25,7 @@ class WikiViewController: UIViewController {
     deinit {
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
+        print("WikiView has been deinit")
     }
     
     required init?(coder aDecoder: NSCoder) {

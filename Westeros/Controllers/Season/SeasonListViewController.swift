@@ -26,6 +26,12 @@ class SeasonListViewController: UITableViewController {
         title = "Seasons"
     }
     
+    deinit {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
+        print("SeasonList has been deinit")
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

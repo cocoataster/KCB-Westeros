@@ -34,7 +34,7 @@ class SeasonDetailViewController: UIViewController {
     
     func updateUI() {
         title = model.name
-        seasonTitleLabel.text = model.name
+        seasonTitleLabel.text = model.releaseDate.strFromDate()
         seasonImageView.image = UIImage(named: model.name)
     }
     
