@@ -47,7 +47,7 @@ class EpisodeDetailViewController: UIViewController {
     
     func updateUI() {
         title = model.title
-        episodeImageView.image = UIImage(named: "EpisodeImg")!
+        episodeImageView.image = UIImage(named: "EpisodeImg.gif")!
         episodeTitleLabel.text = model.title
     }
     
