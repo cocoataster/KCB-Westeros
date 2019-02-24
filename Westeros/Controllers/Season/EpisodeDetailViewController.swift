@@ -41,14 +41,13 @@ class EpisodeDetailViewController: UIViewController {
         updateUI()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func updateUI() {
         title = model.title
         episodeImageView.image = UIImage(named: "EpisodeImg.gif")!
         episodeTitleLabel.text = model.title
+        
+        let backButton = UIBarButtonItem(title: model.season?.name, style: .plain, target: self, action: Selector(("none")))
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     @objc func seasonDidChange(notification: Notification) {

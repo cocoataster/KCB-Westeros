@@ -33,7 +33,7 @@ class EpisodeListViewController: UITableViewController {
         super.viewWillAppear(animated)
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(self.seasonDidChange(notification:)), name: Notification.Name(Const.seasonDidChangeNotificationName.rawValue), object: nil)
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     
     override func viewDidLoad() {

@@ -20,7 +20,7 @@ class MemberListViewController: UIViewController {
     init(model: [Person]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
-        title = "\(model[0].house.name)'s Members"
+        title = "Characters"
     }
     
     deinit {
@@ -42,7 +42,7 @@ class MemberListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,23 +52,17 @@ class MemberListViewController: UIViewController {
     @objc func houseDidChange(notification: Notification) {
         guard let info = notification.userInfo,
             let house = info[Const.houseKey.rawValue] as? House else { return }
-        title = "\(house.name)'s Members"
+        //title = "\(house.name)'s Members"
         model = house.sortedMembers
         tableView.reloadData()
-        let backButton = UIBarButtonItem(title: "\(house.name)'s Members", style: .plain, target: self, action: Selector(("none")))
+        let backButton = UIBarButtonItem(title: house.name, style: .plain, target: self, action: Selector(("none")))
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UITableViewDataSource, UITableViewDelegate
 
-extension MemberListViewController: UITableViewDelegate {
-    
-}
-
-// MARK: - UITableViewDataSource
-
-extension MemberListViewController: UITableViewDataSource {
+extension MemberListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }

@@ -21,6 +21,7 @@ class MemberDetailViewController: UIViewController {
     init(model: Person) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
+        title = model.name
     }
     
     deinit {
@@ -42,9 +43,12 @@ class MemberDetailViewController: UIViewController {
     }
     
     func updateUI() {
-        title = "Character"
+        title = model.name
         memberImageView.image = UIImage(named: model.name)
         memberTitleLabel.text = model.fullName
+        
+        let backButton = UIBarButtonItem(title: model.house.name, style: .plain, target: self, action: Selector(("none")))
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     @objc func houseDidChange(notification: Notification) {
